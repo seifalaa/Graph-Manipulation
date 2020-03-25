@@ -234,8 +234,8 @@ public class GraphRepresentationController implements Initializable {
                     lbl.setPrefWidth(width);
                     lbl.setPrefHeight(height);
                     lbl.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
-                    GridPane.setColumnIndex(lbl,j+1);
-                    GridPane.setRowIndex(lbl,i+1);
+                    GridPane.setColumnIndex(lbl,i+1);
+                    GridPane.setRowIndex(lbl,j+1);
                     adjGrid.getChildren().add(lbl);
                 }
             }
@@ -292,8 +292,8 @@ public class GraphRepresentationController implements Initializable {
                     lbl.setPrefWidth(width);
                     lbl.setPrefHeight(height);
                     lbl.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
-                    GridPane.setColumnIndex(lbl,j+1);
-                    GridPane.setRowIndex(lbl,i+1);
+                    GridPane.setColumnIndex(lbl,i+1);
+                    GridPane.setRowIndex(lbl,j+1);
                     adjGrid.getChildren().add(lbl);
                 }
             }
