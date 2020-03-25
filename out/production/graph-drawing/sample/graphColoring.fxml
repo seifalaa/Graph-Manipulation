@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GraphColoring">
+   <children>
+      <ImageView fx:id="inputImage" fitHeight="369.0" fitWidth="496.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="outputImage" fitHeight="369.0" fitWidth="496.0" layoutX="506.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="184.0" layoutY="14.0" text="Input Graph" />
+      <Label layoutX="734.0" layoutY="14.0" text="Output Graph" />
+      <Button fx:id="showGraphsBtn" layoutX="887.0" layoutY="444.0" mnemonicParsing="false" onAction="#showGraphs" text="Show Graphs" />
+      <ProgressBar fx:id="progressPar" layoutX="680.0" layoutY="448.0" prefWidth="200.0" progress="0.0" />
+      <Label layoutX="680.0" layoutY="427.0" text="Generating Graphs" />
+   </children>
+</AnchorPane>

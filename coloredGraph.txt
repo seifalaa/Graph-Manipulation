@@ -1,0 +1,7 @@
+2
+2
+Directed
+a,b,
+Blue,Yellow,
+e1,a,b
+e2,a,b
