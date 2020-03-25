@@ -234,8 +234,8 @@ public class GraphRepresentationController implements Initializable {
                     lbl.setPrefWidth(width);
                     lbl.setPrefHeight(height);
                     lbl.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
-                    GridPane.setColumnIndex(lbl,i+1);
-                    GridPane.setRowIndex(lbl,j+1);
+                    GridPane.setColumnIndex(lbl,j+1);
+                    GridPane.setRowIndex(lbl,i+1);
                     adjGrid.getChildren().add(lbl);
                 }
             }
@@ -292,8 +292,8 @@ public class GraphRepresentationController implements Initializable {
                     lbl.setPrefWidth(width);
                     lbl.setPrefHeight(height);
                     lbl.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
-                    GridPane.setColumnIndex(lbl,i+1);
-                    GridPane.setRowIndex(lbl,j+1);
+                    GridPane.setColumnIndex(lbl,j+1);
+                    GridPane.setRowIndex(lbl,i+1);
                     adjGrid.getChildren().add(lbl);
                 }
             }
@@ -314,7 +314,7 @@ public class GraphRepresentationController implements Initializable {
             }
             double width = 950.0/numberOfVertexes;
             double height = 400.0/numberOfVertexes;
-            Label lbl2 = new Label("Vertex");
+            Label lbl2 = new Label("Vertex/Edge");
             lbl2.setAlignment(Pos.CENTER);
             lbl2.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
             lbl2.setPrefWidth(width);
@@ -328,6 +328,19 @@ public class GraphRepresentationController implements Initializable {
                 lbl.setPrefWidth(width);
                 lbl.setPrefHeight(height);
                 lbl.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
+                GridPane.setColumnIndex(lbl,0);
+                GridPane.setRowIndex(lbl,i+1);
+                lbl.setFont(Font.font("", FontWeight.BOLD, 15));
+                incGrid.getChildren().add(lbl);
+            }
+            ArrayList<Edge>edges = graph.getGraphEdges();
+            for(int i=0;i<numberOfEdges;i++)
+            {
+                Label lbl = new Label(edges.get(i).getEdgeName());
+                lbl.setPrefWidth(width);
+                lbl.setPrefHeight(height);
+                lbl.setAlignment(Pos.CENTER);
+                lbl.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
                 GridPane.setColumnIndex(lbl,i+1);
                 GridPane.setRowIndex(lbl,0);
                 lbl.setFont(Font.font("", FontWeight.BOLD, 15));
@@ -335,19 +348,7 @@ public class GraphRepresentationController implements Initializable {
             }
             for(int i=0;i<numberOfVertexes;i++)
             {
-                Label lbl = new Label(vertexes.get(i));
-                lbl.setPrefWidth(width);
-                lbl.setPrefHeight(height);
-                lbl.setAlignment(Pos.CENTER);
-                lbl.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
-                GridPane.setColumnIndex(lbl,0);
-                GridPane.setRowIndex(lbl,i+1);
-                lbl.setFont(Font.font("", FontWeight.BOLD, 15));
-                incGrid.getChildren().add(lbl);
-            }
-            for(int i=0;i<numberOfVertexes;i++)
-            {
-                for(int j=0;j<numberOfVertexes;j++)
+                for(int j=0;j<numberOfEdges;j++)
                 {
                     Label lbl = new Label(String.valueOf(matrix[i][j]));
                     lbl.setAlignment(Pos.CENTER);
@@ -372,7 +373,7 @@ public class GraphRepresentationController implements Initializable {
             }
             double width = 950.0/numberOfVertexes;
             double height = 400.0/numberOfVertexes;
-            Label lbl2 = new Label("Vertex");
+            Label lbl2 = new Label("Vertex/Edge");
             lbl2.setAlignment(Pos.CENTER);
             lbl2.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
             lbl2.setPrefWidth(width);
@@ -386,34 +387,35 @@ public class GraphRepresentationController implements Initializable {
                 lbl.setPrefWidth(width);
                 lbl.setPrefHeight(height);
                 lbl.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
-                GridPane.setColumnIndex(lbl,i+1);
-                GridPane.setRowIndex(lbl,0);
+                GridPane.setColumnIndex(lbl,0);
+                GridPane.setRowIndex(lbl,i+1);
                 lbl.setFont(Font.font("", FontWeight.BOLD, 15));
                 adjGrid.getChildren().add(lbl);
             }
-            for(int i=0;i<numberOfVertexes;i++)
+            ArrayList<Edge>edges = graph.getGraphEdges();
+            for(int i=0;i<numberOfEdges;i++)
             {
-                Label lbl = new Label(vertexes.get(i));
+                Label lbl = new Label(edges.get(i).getEdgeName());
                 lbl.setPrefWidth(width);
                 lbl.setPrefHeight(height);
                 lbl.setAlignment(Pos.CENTER);
                 lbl.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
-                GridPane.setColumnIndex(lbl,0);
-                GridPane.setRowIndex(lbl,i+1);
+                GridPane.setColumnIndex(lbl,i+1);
+                GridPane.setRowIndex(lbl,0);
                 lbl.setFont(Font.font("", FontWeight.BOLD, 15));
                 incGrid.getChildren().add(lbl);
             }
             for(int i=0;i<numberOfVertexes;i++)
             {
-                for(int j=0;j<numberOfVertexes;j++)
+                for(int j=0;j<numberOfEdges;j++)
                 {
                     Label lbl = new Label(String.valueOf(matrix[i][j]));
                     lbl.setAlignment(Pos.CENTER);
                     lbl.setPrefWidth(width);
                     lbl.setPrefHeight(height);
                     lbl.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
-                    GridPane.setColumnIndex(lbl,i+1);
-                    GridPane.setRowIndex(lbl,j+1);
+                    GridPane.setColumnIndex(lbl,j+1);
+                    GridPane.setRowIndex(lbl,i+1);
                     incGrid.getChildren().add(lbl);
                 }
             }
@@ -425,6 +427,14 @@ public class GraphRepresentationController implements Initializable {
         if(graphType.equals("Directed"))
         {
             int[][]repMatrix = graph.createDiRepresentationMatrix();
+            for(int i=0;i<numberOfVertexes;i++)
+            {
+                for(int j=0;j<numberOfVertexes;j++)
+                {
+                    System.out.print(repMatrix[i][j]+" ");
+                }
+                System.out.println();
+            }
 
             ArrayList<String> vertexes = new ArrayList<>();
             ArrayList<Vertex>temp = graph.getGraphVertices();
@@ -474,8 +484,8 @@ public class GraphRepresentationController implements Initializable {
                     lbl.setPrefWidth(width);
                     lbl.setPrefHeight(height);
                     lbl.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
-                    GridPane.setColumnIndex(lbl,i+1);
-                    GridPane.setRowIndex(lbl,j+1);
+                    GridPane.setColumnIndex(lbl,j+1);
+                    GridPane.setRowIndex(lbl,i+1);
                     repMatrixGrid.getChildren().add(lbl);
                 }
             }
@@ -532,8 +542,8 @@ public class GraphRepresentationController implements Initializable {
                     lbl.setPrefWidth(width);
                     lbl.setPrefHeight(height);
                     lbl.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
-                    GridPane.setColumnIndex(lbl,i+1);
-                    GridPane.setRowIndex(lbl,j+1);
+                    GridPane.setColumnIndex(lbl,j+1);
+                    GridPane.setRowIndex(lbl,i+1);
                     repMatrixGrid.getChildren().add(lbl);
                 }
             }

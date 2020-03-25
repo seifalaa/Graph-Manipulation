@@ -1,7 +1,5 @@
-3
-3
+2
+1
 Directed
-a,b,c,
+a,b,
 e1,1,a,b
-e2,1,b,c
-e3,1,c,a
