@@ -2,82 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="adjusting incidence matrix">
-      <change afterPath="$PROJECT_DIR$/MST.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/coloredGraph/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/coloredGraph/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/coloredGraph/PKG-00.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/coloredGraph/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/coloredGraph/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/coloredGraph/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/coloredGraph/Tree-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/coloredGraph/Tree-01.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/coloredGraph/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/coloredGraph/coloredGraph.exe.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/coloredGraph/warn-coloredGraph.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/coloredGraph/xref-coloredGraph.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/PKG-00.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/Tree-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/Tree-01.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/main.exe.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/warn-main.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/main/xref-main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/minimumSpanningTree/Analysis-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/minimumSpanningTree/EXE-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/minimumSpanningTree/PKG-00.pkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/minimumSpanningTree/PKG-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/minimumSpanningTree/PYZ-00.pyz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/minimumSpanningTree/PYZ-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/minimumSpanningTree/Tree-00.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/minimumSpanningTree/Tree-01.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/minimumSpanningTree/base_library.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/minimumSpanningTree/minimumSpanningTree.exe.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/minimumSpanningTree/warn-minimumSpanningTree.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/minimumSpanningTree/xref-minimumSpanningTree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coloredGraph.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coloredGraph.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/coloredGraph.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/main.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/minimumSpanningTree.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minimumSpanningTree.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minimumSpanningTree.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minimumSpanningTree.spec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/DisjointSets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/FlueryAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/MinimumSpanningTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/fluery'sAlgorithm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/minimumSpanningTree.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/HamiltonCircuit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/MinimumHamiltonCircuit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/hamiltonCircuit.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/minimumHamiltonCircuit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jython_standalone_2_7_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coloredGraph.exe" beforeDir="false" afterPath="$PROJECT_DIR$/coloredGraph.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MST.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MST.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coloredGraph.txt" beforeDir="false" afterPath="$PROJECT_DIR$/coloredGraph.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph-drawing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/graph-drawing.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graph.txt" beforeDir="false" afterPath="$PROJECT_DIR$/graph.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/ChooseOperationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/ChooseOperationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/DisjointSets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/DisjointSets.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/Edge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/FlueryAlgorithm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/FlueryAlgorithm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/FlueryAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/FlueryAlgorithm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/Graph.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphColoring$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphColoring$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphColoring.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphColoring.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphRepresentationController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphRepresentationController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphRepresentationController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphRepresentationController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphRepresentationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphRepresentationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumSpanningTree$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumSpanningTree$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumSpanningTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumSpanningTree.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/Vertex.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/chooseOperation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/chooseOperation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/graphColoring.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/graphColoring.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/AdjListTableContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/AdjListTableContent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/ChooseOperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ChooseOperationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/DisjointSets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/DisjointSets.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/FlueryAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FlueryAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/GraphColoring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GraphColoring.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/GraphRepresentationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GraphRepresentationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/MinimumSpanningTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MinimumSpanningTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Vertex.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/chooseOperation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/chooseOperation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/graphColoring.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/graphColoring.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +133,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../OS/disk-scheduling" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -356,42 +318,42 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="473" y="174" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585216777962" />
-    <state width="1493" height="225" key="GridCell.Tab.0.bottom" timestamp="1585239874036">
+    <state width="1493" height="225" key="GridCell.Tab.0.bottom" timestamp="1585261636453">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="225" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585239874036" />
-    <state width="1493" height="225" key="GridCell.Tab.0.center" timestamp="1585239874036">
+    <state width="1493" height="225" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585261636453" />
+    <state width="1493" height="225" key="GridCell.Tab.0.center" timestamp="1585261636453">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="225" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1585239874036" />
-    <state width="1493" height="225" key="GridCell.Tab.0.left" timestamp="1585239874036">
+    <state width="1493" height="225" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1585261636453" />
+    <state width="1493" height="225" key="GridCell.Tab.0.left" timestamp="1585261636453">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="225" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1585239874036" />
-    <state width="1493" height="225" key="GridCell.Tab.0.right" timestamp="1585239874036">
+    <state width="1493" height="225" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1585261636453" />
+    <state width="1493" height="225" key="GridCell.Tab.0.right" timestamp="1585261636453">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="225" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1585239874036" />
-    <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1585231143438">
+    <state width="1493" height="225" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1585261636453" />
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1585245671637">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585231143438" />
-    <state width="1493" height="277" key="GridCell.Tab.1.center" timestamp="1585231143438">
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585245671637" />
+    <state width="1493" height="277" key="GridCell.Tab.1.center" timestamp="1585245671637">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1585231143438" />
-    <state width="1493" height="277" key="GridCell.Tab.1.left" timestamp="1585231143438">
+    <state width="1493" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1585245671637" />
+    <state width="1493" height="277" key="GridCell.Tab.1.left" timestamp="1585245671637">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1585231143438" />
-    <state width="1493" height="277" key="GridCell.Tab.1.right" timestamp="1585231143438">
+    <state width="1493" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1585245671637" />
+    <state width="1493" height="277" key="GridCell.Tab.1.right" timestamp="1585245671637">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1585231143438" />
-    <state x="249" y="7" key="SettingsEditor" timestamp="1585129179263">
+    <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1585245671637" />
+    <state x="249" y="7" key="SettingsEditor" timestamp="1585259562071">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="249" y="7" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1585129179263" />
+    <state x="249" y="7" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1585259562071" />
     <state x="463" y="30" width="609" height="804" key="find.popup" timestamp="1585064347834">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

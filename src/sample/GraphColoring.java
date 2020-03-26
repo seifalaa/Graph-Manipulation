@@ -27,10 +27,12 @@ public class GraphColoring {
     private int numberOfVertexes;
     private int numberOfEdges;
     private String graphType;
+
     public void showGraphs(ActionEvent actionEvent) {
         setImages();
     }
-    public void getGraph(Graph graph ,int numberOfVertexes,int numberOfEdges,String graphType ) throws IOException {
+
+    public void getGraph(Graph graph, int numberOfVertexes, int numberOfEdges, String graphType) throws IOException {
         this.graph = graph;
         this.numberOfVertexes = numberOfVertexes;
         this.numberOfEdges = numberOfEdges;
@@ -41,36 +43,34 @@ public class GraphColoring {
         showGraphsBtn.setDisable(false);
 
     }
+
     public void colorGraph() throws IOException {
         graph.coloringTheVertices();
         FileWriter writer = new FileWriter("coloredGraph.txt");
-        writer.write(numberOfVertexes+"\n");
-        writer.write(numberOfEdges+"\n");
-        writer.write(graphType+"\n");
+        writer.write(numberOfVertexes + "\n");
+        writer.write(numberOfEdges + "\n");
+        writer.write(graphType + "\n");
         ArrayList<Vertex> vertices = graph.getGraphVertices();
         ArrayList<Edge> edges = graph.getGraphEdges();
-        for(int i=0;i<numberOfVertexes;i++)
-        {
-            writer.write(vertices.get(i).getVertexName()+",");
+        for (int i = 0; i < numberOfVertexes; i++) {
+            writer.write(vertices.get(i).getVertexName() + ",");
         }
         writer.write("\n");
-        for(int i=0;i<numberOfVertexes;i++)
-        {
-            writer.write(vertices.get(i).getVertexColor()+",");
+        for (int i = 0; i < numberOfVertexes; i++) {
+            writer.write(vertices.get(i).getVertexColor() + ",");
         }
         writer.write("\n");
-        for(int i=0;i<numberOfEdges;i++ )
-        {
-            writer.write(edges.get(i).getEdgeName()+","+edges.get(i).getStart().getVertexName()+","+edges.get(i).getTermination().getVertexName()+"\n");
+        for (int i = 0; i < numberOfEdges; i++) {
+            writer.write(edges.get(i).getEdgeName() + "," + edges.get(i).getStart().getVertexName() + "," + edges.get(i).getTermination().getVertexName() + "\n");
         }
 
         writer.close();
     }
-    public void setProgressPar()
-    {
+
+    public void setProgressPar() {
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(progressPar.progressProperty(), 0)),
-                new KeyFrame(Duration.seconds(6), e-> {
+                new KeyFrame(Duration.seconds(6), e -> {
                 }, new KeyValue(progressPar.progressProperty(), 1))
         );
         timeline.setCycleCount(Animation.INDEFINITE);
@@ -82,14 +82,13 @@ public class GraphColoring {
                         timeline.stop();
 
 
-
                     }
                 },
                 6000
         );
     }
-    public void setImages()
-    {
+
+    public void setImages() {
         try {
             inputImage.setImage(new Image(new File("graph.png").toURL().toString()));
             outputImage.setImage(new Image(new File("coloredGraph.png").toURL().toString()));
@@ -97,8 +96,8 @@ public class GraphColoring {
             e.printStackTrace();
         }
     }
-    public void callDrawingPrograms()
-    {
+
+    public void callDrawingPrograms() {
         try {
             Runtime.getRuntime().exec("main.exe");
             Runtime.getRuntime().exec("coloredGraph.exe");

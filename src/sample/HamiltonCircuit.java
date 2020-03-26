@@ -16,11 +16,18 @@ import javafx.util.Duration;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 
-public class FlueryAlgorithm {
+public class HamiltonCircuit {
 
     @FXML
     private ImageView graphImage = new ImageView();
+
+    @FXML
+    private Label hamiltonCircuitLbl = new Label();
+
+    @FXML
+    private Label hamiltonPathLbl = new Label();
 
     @FXML
     private Button showGraphBtn = new Button();
@@ -29,29 +36,30 @@ public class FlueryAlgorithm {
     private ProgressBar progressPar = new ProgressBar();
 
     @FXML
-    private Label resultLbl = new Label();
-
-    @FXML
     void showGraph(ActionEvent event) {
         try {
             graphImage.setImage(new Image(new File("graph.png").toURL().toString()));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        resultLbl.setOpacity(1);
-    }
+        hamiltonCircuitLbl.setOpacity(1);
+        hamiltonPathLbl.setOpacity(1);
 
+    }
     public void getGraph(Graph graph, String graphType) {
+
         if (graphType.equals("Directed")) {
-            String result = graph.directedFleuryAlgorithm();
-            resultLbl.setText(result);
+            ArrayList<String>results = graph.diFullHamilton();
+            hamiltonCircuitLbl.setText(results.get(0));
+            hamiltonPathLbl.setText(results.get(1));
             executeDrawingProgram();
             setProgressPar();
             showGraphBtn.setDisable(false);
 
         } else if (graphType.equals("Undirected")) {
-            String result = graph.fleuryAlgorithm();
-            resultLbl.setText(result);
+            ArrayList<String>results = graph.fullHamilton();
+            hamiltonCircuitLbl.setText(results.get(0));
+            hamiltonPathLbl.setText(results.get(1));
             executeDrawingProgram();
             setProgressPar();
             showGraphBtn.setDisable(false);
@@ -80,7 +88,6 @@ public class FlueryAlgorithm {
                 6000
         );
     }
-
     public void executeDrawingProgram() {
         try {
             Runtime.getRuntime().exec("main.exe");

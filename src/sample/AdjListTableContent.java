@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class AdjListTableContent {
     private String vertex;
-    private ArrayList<String>adjacent;
+    private ArrayList<String> adjacent;
 
     public AdjListTableContent(String vertex, ArrayList<String> adjacent) {
         this.vertex = vertex;

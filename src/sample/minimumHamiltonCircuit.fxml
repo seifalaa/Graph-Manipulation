@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="706.0" prefWidth="1056.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MinimumHamiltonCircuit">
+   <children>
+      <ImageView fx:id="inputImage" fitHeight="369.0" fitWidth="496.0" layoutX="17.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="outputImage" fitHeight="369.0" fitWidth="496.0" layoutX="533.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="showGraphBtn" layoutX="942.0" layoutY="666.0" mnemonicParsing="false" onAction="#showGraph" text="Show Graphs" />
+      <ProgressBar fx:id="progressPar" layoutX="735.0" layoutY="670.0" prefWidth="200.0" progress="0.0" />
+      <Label layoutX="735.0" layoutY="649.0" text="Generate Graphs" />
+      <TableView fx:id="inputTbl" layoutX="17.0" layoutY="420.0" opacity="0.0" prefHeight="200.0" prefWidth="496.0">
+        <columns>
+          <TableColumn fx:id="inputEdgeName" prefWidth="89.60000228881836" text="Edge Name" />
+          <TableColumn fx:id="inputEdgeWeight" prefWidth="119.20001220703125" text="Edge Weight" />
+            <TableColumn fx:id="inputEdgeStartVertex" prefWidth="130.40000915527344" text="Edge Start Vertex" />
+            <TableColumn fx:id="inputEdgeEndVertex" prefWidth="157.5999755859375" text="Edge End Vertex" />
+            <TableColumn prefWidth="130.40000915527344" text="Edge Start Vertex" />
+        </columns>
+      </TableView>
+      <TableView fx:id="outputTbl" layoutX="533.0" layoutY="420.0" opacity="0.0" prefHeight="200.0" prefWidth="496.0">
+         <columns>
+            <TableColumn fx:id="outputEdgeName" prefWidth="89.60000228881836" text="Edge Name" />
+            <TableColumn fx:id="outputEdgeWeight" prefWidth="119.20001220703125" text="Edge Weight" />
+            <TableColumn fx:id="outputEdgeStartVertex" prefWidth="130.40000915527344" text="Edge Start Vertex" />
+            <TableColumn fx:id="outputEdgeEndVertex" prefWidth="157.5999755859375" text="Edge End Vertex" />
+            <TableColumn prefWidth="130.40000915527344" text="Edge Start Vertex" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ChooseOperationController">
    <children>
-      <RadioButton fx:id="gR" layoutX="42.0" layoutY="104.0" mnemonicParsing="false" text="Graph Representaion">
+      <RadioButton fx:id="gR" layoutX="42.0" layoutY="104.0" mnemonicParsing="false" text="Graph Representation">
          <toggleGroup>
             <ToggleGroup fx:id="g1" />
          </toggleGroup>
@@ -29,7 +29,7 @@
             <Font size="17.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="42.0" layoutY="274.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$g1">
+      <RadioButton fx:id="MHC" layoutX="42.0" layoutY="274.0" mnemonicParsing="false" text="Minimum Hamilton Circuit" toggleGroup="$g1">
          <font>
             <Font size="17.0" />
          </font>
@@ -41,5 +41,11 @@
       </Label>
       <Button layoutX="438.0" layoutY="361.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="56.0" text="Back" />
       <Button layoutX="510.0" layoutY="361.0" mnemonicParsing="false" onAction="#choose" prefHeight="26.0" prefWidth="68.0" text="Choose" />
+      <RadioButton fx:id="MHPC" layoutX="42.0" layoutY="316.0" mnemonicParsing="false" text="Hamilton Path &amp; Hamilton Circuit" toggleGroup="$g1">
+
+         <font>
+            <Font size="17.0" />
+         </font>
+      </RadioButton>
    </children>
 </AnchorPane>

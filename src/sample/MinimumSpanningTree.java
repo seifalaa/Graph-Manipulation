@@ -1,4 +1,5 @@
 package sample;
+
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -15,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -77,31 +79,45 @@ public class MinimumSpanningTree {
         inputTbl.setOpacity(1);
         outputTbl.setOpacity(1);
     }
-    public void getGraph(Graph graph , int numberOfEdges , String graphType) throws IOException {
+
+    public void getGraph(Graph graph, int numberOfEdges, String graphType) throws IOException {
         this.numberOfEdges = numberOfEdges;
-        ArrayList<Edge>edges = graph.Kruskal();
-        minimumSpanningTree(edges,graphType);
-        fillTables(edges,graph.getGraphEdges());
-        executeDrawingProgram();
-        setProgressPar();
-        showGraphBtn.setDisable(false);
+        if(graphType.equals("Undirected"))
+        {
+            ArrayList<Edge> edges = graph.Kruskal();
+            minimumSpanningTree(edges, graphType);
+            fillTables(edges, graph.getGraphEdges());
+            executeDrawingProgram();
+            setProgressPar();
+            showGraphBtn.setDisable(false);
+        }
+        else if(graphType.equals("Directed"))
+        {
+            ArrayList<Edge> edges = graph.directedMinimumSpanningTree();
+            minimumSpanningTree(edges, graphType);
+            fillTables(edges, graph.getGraphEdges());
+            executeDrawingProgram();
+            setProgressPar();
+            showGraphBtn.setDisable(false);
+        }
 
 
     }
-    public void minimumSpanningTree(ArrayList<Edge>edges , String graphType) throws IOException {
+
+    public void minimumSpanningTree(ArrayList<Edge> edges, String graphType) throws IOException {
         FileWriter writer = new FileWriter("MST.txt");
-        writer.write(edges.size()+"\n");
-        writer.write(graphType+"\n");
+        writer.write(edges.size() + "\n");
+        writer.write(graphType + "\n");
         for (Edge edge : edges) {
             writer.write(edge.getEdgeName() + "," + edge.getWeight() + "," + edge.getStart().getVertexName() + "," + edge.getTermination().getVertexName() + "\n");
         }
         writer.close();
     }
-    public void setProgressPar()
-    {
+
+    public void setProgressPar() {
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(progressPar.progressProperty(), 0)),
-                new KeyFrame(Duration.seconds(6), e-> {
+                new KeyFrame(Duration.seconds(6), e -> {
                 }, new KeyValue(progressPar.progressProperty(), 1))
         );
         timeline.setCycleCount(Animation.INDEFINITE);
@@ -113,14 +129,13 @@ public class MinimumSpanningTree {
                         timeline.stop();
 
 
-
                     }
                 },
                 6000
         );
     }
-    public void executeDrawingProgram()
-    {
+
+    public void executeDrawingProgram() {
         try {
             Runtime.getRuntime().exec("main.exe");
             Runtime.getRuntime().exec("minimumSpanningTree.exe");
@@ -128,15 +143,14 @@ public class MinimumSpanningTree {
             e.printStackTrace();
         }
     }
-    public void fillTables(ArrayList<Edge>outputEdges , ArrayList<Edge>inputEdges)
-    {
-        ArrayList<EdgeForTabel>edgeForTable = new ArrayList<>();
-        ArrayList<EdgeForTabel>edgeForTable2 = new ArrayList<>();
-        for(int i=0;i<numberOfEdges;i++)
-        {
-            edgeForTable.add(new EdgeForTabel(inputEdges.get(i).getEdgeName(), String.valueOf(inputEdges.get(i).getWeight()),inputEdges.get(i).getStart().getVertexName(),inputEdges.get(i).getTermination().getVertexName()));
+
+    public void fillTables(ArrayList<Edge> outputEdges, ArrayList<Edge> inputEdges) {
+        ArrayList<EdgeForTabel> edgeForTable = new ArrayList<>();
+        ArrayList<EdgeForTabel> edgeForTable2 = new ArrayList<>();
+        for (int i = 0; i < numberOfEdges; i++) {
+            edgeForTable.add(new EdgeForTabel(inputEdges.get(i).getEdgeName(), String.valueOf(inputEdges.get(i).getWeight()), inputEdges.get(i).getStart().getVertexName(), inputEdges.get(i).getTermination().getVertexName()));
         }
-        ObservableList<EdgeForTabel>observableList = FXCollections.observableArrayList(edgeForTable);
+        ObservableList<EdgeForTabel> observableList = FXCollections.observableArrayList(edgeForTable);
         for (Edge outputEdge : outputEdges) {
             edgeForTable2.add(new EdgeForTabel(outputEdge.getEdgeName(), String.valueOf(outputEdge.getWeight()), outputEdge.getStart().getVertexName(), outputEdge.getTermination().getVertexName()));
         }
