@@ -1,17 +1,24 @@
 
 package sample;
-
-public class Edge {
+public class Edge implements Comparable<Edge>  {
     private Vertex start;
     private Vertex termination;
     private String edgeName;
-
-    public Edge(String edgeName, Vertex start,Vertex termination)
+    private int weight;
+    public Edge(String edgeName, int weight,Vertex start,Vertex termination)
     {
         this.edgeName=edgeName;
         this.start=start;
         this.termination=termination;
+        this.weight=weight;
     }
+
+
+    Edge() {
+    }
+
+
+
     public Vertex getStart() {
         return start;
     }
@@ -22,6 +29,16 @@ public class Edge {
 
     public String getEdgeName() {
         return edgeName;
+    }
+    public int getWeight() {
+        return weight;
+    }
+
+    @Override
+    public int compareTo(Edge t) {
+
+        return this.weight-t.weight;
+
     }
 
 }

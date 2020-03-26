@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+import jnr.ffi.annotations.In;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,6 +21,8 @@ public class ChooseOperationController {
 
     public RadioButton gC = new RadioButton();
     public RadioButton gR = new RadioButton();
+    public RadioButton flury = new RadioButton();
+    public RadioButton MST = new RadioButton();
     private Graph graph = new Graph();
     private int numberOfVertexes;
     private String graphType;
@@ -65,11 +68,33 @@ public class ChooseOperationController {
             stage.setTitle("Graph Coloring");
             stage.show();
         }
+        else if(flury.isSelected())
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fluery'sAlgorithm.fxml"));
+            Parent root = loader.load();
+            FlueryAlgorithm obj = loader.getController();
+            obj.getGraph(graph,graphType);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Fluery's Algorithm");
+            stage.show();
+        }
+        else if(MST.isSelected())
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("minimumSpanningTree.fxml"));
+            Parent root = loader.load();
+            MinimumSpanningTree obj = loader.getController();
+            obj.getGraph(graph,numberOfEdges,graphType);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Minimum Spanning Tree");
+            stage.show();
+        }
 
 
     }
     public void readGraph() throws FileNotFoundException {
-        Scanner input = new Scanner(new File("E:\\books\\6th semester\\algorithms\\graph-drawing\\graph.txt"));
+        Scanner input = new Scanner(new File("graph.txt"));
         ArrayList<String>content = new ArrayList<>();
         while(input.hasNext())
         {
@@ -90,7 +115,7 @@ public class ChooseOperationController {
             for(int i=0;i<numberOfEdges;i++)
             {
                 String[] edge = content.get(i+4).split(",");
-                graph.addDirectedEdge(edge[0],edge[2],edge[3]);
+                graph.addDirectedEdge(edge[0],Integer.parseInt(edge[1]),edge[2],edge[3]);
             }
 
         }
@@ -99,7 +124,7 @@ public class ChooseOperationController {
             for(int i=0;i<numberOfEdges;i++)
             {
                 String[] edge = content.get(i+4).split(",");
-                graph.addUndirectedEdge(edge[0],edge[2],edge[3]);
+                graph.addUndirectedEdge(edge[0],Integer.parseInt(edge[1]),edge[2],edge[3]);
             }
         }
     }

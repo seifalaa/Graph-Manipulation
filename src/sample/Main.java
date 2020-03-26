@@ -29,11 +29,13 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-        File file = new File("E:\\books\\6th semester\\algorithms\\graph-drawing\\graph.png");
-        File file1 = new File("E:\\books\\6th semester\\algorithms\\graph-drawing\\coloredGraph.png");
+        File file = new File("graph.png");
+        File file1 = new File("coloredGraph.png");
+        File file2 = new File("MST.png");
         boolean delete = file.delete();
         boolean delete1 = file1.delete();
-        if(delete && delete1)
+        boolean delete2 = file2.delete();
+        if(delete && delete1 && delete2)
         {
             System.out.println("files deleted successfully");
             System.exit(0);
