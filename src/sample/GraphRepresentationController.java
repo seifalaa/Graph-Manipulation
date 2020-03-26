@@ -49,7 +49,7 @@ public class GraphRepresentationController implements Initializable {
 
     public GraphRepresentationController(){
         try {
-            Runtime.getRuntime().exec("E:\\books\\6th semester\\algorithms\\graph-drawing\\main.exe");
+            Runtime.getRuntime().exec("main.exe");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -68,7 +68,7 @@ public class GraphRepresentationController implements Initializable {
 
     public void showGraph(ActionEvent actionEvent) {
         try {
-            graphImage.setImage(new Image(new File("E:\\books\\6th semester\\algorithms\\graph-drawing\\graph.png").toURL().toString()));
+            graphImage.setImage(new Image(new File("graph.png").toURL().toString()));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -95,7 +95,7 @@ public class GraphRepresentationController implements Initializable {
 
     }
     public void fillTable() throws FileNotFoundException {
-        Scanner input = new Scanner(new File("E:\\books\\6th semester\\algorithms\\graph-drawing\\graph.txt"));
+        Scanner input = new Scanner(new File("graph.txt"));
         ArrayList<String> content = new ArrayList<>();
 
         while (input.hasNext()) {
@@ -355,8 +355,8 @@ public class GraphRepresentationController implements Initializable {
                     lbl.setPrefWidth(width);
                     lbl.setPrefHeight(height);
                     lbl.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
-                    GridPane.setColumnIndex(lbl,i+1);
-                    GridPane.setRowIndex(lbl,j+1);
+                    GridPane.setColumnIndex(lbl,j+1);
+                    GridPane.setRowIndex(lbl,i+1);
                     incGrid.getChildren().add(lbl);
                 }
             }
@@ -427,15 +427,6 @@ public class GraphRepresentationController implements Initializable {
         if(graphType.equals("Directed"))
         {
             int[][]repMatrix = graph.createDiRepresentationMatrix();
-            for(int i=0;i<numberOfVertexes;i++)
-            {
-                for(int j=0;j<numberOfVertexes;j++)
-                {
-                    System.out.print(repMatrix[i][j]+" ");
-                }
-                System.out.println();
-            }
-
             ArrayList<String> vertexes = new ArrayList<>();
             ArrayList<Vertex>temp = graph.getGraphVertices();
             for(int i=0;i<numberOfVertexes;i++)

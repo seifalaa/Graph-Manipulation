@@ -1,7 +1,8 @@
 package sample;
 
-import java.security.PublicKey;
 import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class Graph {
     private ArrayList<Vertex> graphVertices;
@@ -18,60 +19,48 @@ public class Graph {
     }
 
     public Vertex getVertexByName(String vertexName) {
-        for (int i = 0; i < graphVertices.size(); i++) {
-            if (graphVertices.get(i).getVertexName().equals(vertexName))
-                return graphVertices.get(i);
+        for (Vertex graphVertex : graphVertices) {
+            if (graphVertex.getVertexName().equals(vertexName))
+                return graphVertex;
         }
         return null;
     }
     public Edge getEdgeByName(String edgeName) {
-        for (int i = 0; i < graphEdges.size(); i++) {
-            if (graphEdges.get(i).getEdgeName().equals(edgeName))
-                return graphEdges.get(i);
+        for (Edge graphEdge : graphEdges) {
+            if (graphEdge.getEdgeName().equals(edgeName))
+                return graphEdge;
         }
         return null;
     }
 
-    public boolean addVertex(String vertexName) {
+    public void addVertex(String vertexName) {
         if (getVertexByName(vertexName) != null)
-            return false;
-        graphVertices.add(new Vertex(vertexName));
-        return true;
-    }
-    public void addEdge(String startVertexName , String endVertexName , String edgeName){
-        int startVertexIndex = findVertex(startVertexName);
-        int endVertexIndex = findVertex(endVertexName);
-        Vertex startVertex = graphVertices.get(startVertexIndex);
-        Vertex endVertex  = graphVertices.get(endVertexIndex);
-        startVertex.addAdjacentVertex(endVertex);
-        endVertex.addAdjacentVertex(startVertex);
-        graphEdges.add(new Edge(edgeName , startVertex , endVertex));
+            return;
+        graphVertices.add(new Vertex(vertexName,graphVertices.size()));
     }
 
-    public boolean addDirectedEdge(String edgeName, String startVertexName, String endVertexName) {
+    public void addDirectedEdge(String edgeName, int edgeWeight, String startVertexName, String endVertexName) {
         Vertex startVertex = getVertexByName(startVertexName);
         Vertex endVertex = getVertexByName(endVertexName);
         if (startVertex == null || endVertex == null)
-            return false;
+            return;
         if (getEdgeByName(edgeName) != null)
-            return false;
-        graphEdges.add(new Edge(edgeName, startVertex, endVertex));
+            return;
+        graphEdges.add(new Edge(edgeName, edgeWeight,startVertex, endVertex));
         startVertex.addAdjacentVertex(endVertex);
-        return true;
     }
 
-    public boolean addUndirectedEdge(String edgeName, String startVertexName, String endVertexName) {
+    public void addUndirectedEdge(String edgeName, int edgeWeight , String startVertexName, String endVertexName) {
         Vertex startVertex = getVertexByName(startVertexName);
         Vertex endVertex = getVertexByName(endVertexName);
         if (startVertex == null || endVertex == null)
-            return false;
+            return;
         if (getEdgeByName(edgeName) != null)
-            return false;
-        graphEdges.add(new Edge(edgeName, startVertex, endVertex));
+            return;
+        graphEdges.add(new Edge(edgeName,edgeWeight ,startVertex, endVertex));
         startVertex.addAdjacentVertex(endVertex);
         if (startVertex != endVertex)
             endVertex.addAdjacentVertex(startVertex);
-        return true;
     }
 
     public ArrayList<Vertex> createAdjacencyList() {
@@ -83,9 +72,9 @@ public class Graph {
         for (int i = 0; i < graphVertices.size(); i++) {
             Vertex vertex = graphVertices.get(i);
             adjacencyList.add(new ArrayList<>());
-            for (int j = 0; j < graphEdges.size(); j++) {
-                Vertex edgeStart = graphEdges.get(j).getStart();
-                Vertex edgeEnd = graphEdges.get(j).getTermination();
+            for (Edge graphEdge : graphEdges) {
+                Vertex edgeStart = graphEdge.getStart();
+                Vertex edgeEnd = graphEdge.getTermination();
                 if (vertex.equals(edgeStart))
                     adjacencyList.get(i).add(edgeEnd);
             }
@@ -192,8 +181,7 @@ public class Graph {
     private ArrayList<ArrayList<String>> createDiAdjacencyList() {
         ArrayList<Edge> temporaryEdges = deepCopyForEdges();
         ArrayList<ArrayList<String>> diAdjacencyList = new ArrayList<>();
-        for (int i = 0; i < graphVertices.size(); i++) {
-            Vertex vertex = graphVertices.get(i);
+        for (Vertex vertex : graphVertices) {
             ArrayList<String> adjacentVertices = new ArrayList<>();
             adjacentVertices.add(vertex.getVertexName());
             for (int j = 0; j < temporaryEdges.size(); j++) {
@@ -261,9 +249,197 @@ public class Graph {
             colored.clear();
 
         }
-        for(int i=0;i<graphVertices.size();i++)
-        {
-            System.out.println(graphVertices.get(i).getVertexColor());
+
+    }
+    ArrayList<Edge> Kruskal()
+    {     DisjointSets dis = new DisjointSets();
+        ArrayList<Edge> edges = new ArrayList<>(graphEdges) ;
+        Collections.sort(edges);
+
+        ArrayList<Edge>  result = new ArrayList<>();
+        for (Vertex graphVertex : graphVertices) {
+            dis.create_set(graphVertex.getVertexName());
+
         }
+
+        for (Edge edge : edges) {
+
+            String s1 = dis.find_set(edge.getStart().getVertexName());
+            String s2 = dis.find_set(edge.getTermination().getVertexName());
+
+            if (!s1.equals(s2)) {
+                result.add(edge);
+                dis.union(s1, s2);
+
+            }
+
+
+        }
+
+        return result;
+    }
+    public String directedFleuryAlgorithm() {
+        ArrayList<Vertex> vertices = deepCopyForVertices();
+        int canBeDirectedEuler = canBeDirectedEuler();
+        StringBuilder route;
+        Vertex startVertex;
+        if (canBeDirectedEuler == -1) {
+            return "No Euler path and no Euler circuit";
+        } else if (canBeDirectedEuler > -1) {
+            route = new StringBuilder("Euler path : ");
+            startVertex = vertices.get(canBeDirectedEuler);
+        } else {
+            route = new StringBuilder("Euler circuit : ");
+            startVertex = vertices.get(0);
+        }
+        startMoving(startVertex, route, vertices , true);
+        return route.toString();
+    }
+    public String fleuryAlgorithm(){
+        ArrayList<Vertex> vertices = deepCopyForVertices();
+        int canBeEuler = canBeEuler();
+        StringBuilder route;
+        Vertex startVertex;
+        if(canBeEuler == -1){
+            return "No Euler path and no Euler circuit";
+        }else if(canBeEuler == 1){
+            route = new StringBuilder("Euler path : ");
+            startVertex = vertices.get(getOddVertex());
+        }else {
+            route = new StringBuilder("Euler circuit : ");
+            startVertex = vertices.get(0);
+        }
+        startMoving(startVertex , route , vertices , false);
+        return route.toString();
+    }
+
+    private void startMoving(Vertex vertex, StringBuilder route, ArrayList<Vertex> vertices , boolean isDirected) {
+        if (vertex.getAdjacentVertices().size() == 0) {
+            route.append(vertex.getVertexName());
+            return;
+        }
+        ArrayList<Vertex> adjacentVertices = vertex.getAdjacentVertices();
+        for (int i = 0; i < adjacentVertices.size(); i++) {
+            Vertex adjacentVertex = adjacentVertices.get(i);
+            if (isValidNextEdge(vertex, adjacentVertex, i, vertices,isDirected)) {
+                route.append(vertex.getVertexName()).append(" -> ");
+                removeEdge(vertex , adjacentVertex , isDirected);
+                startMoving(adjacentVertex, route, vertices,isDirected);
+            }
+        }
+    }
+
+    private boolean isValidNextEdge(Vertex startVertex, Vertex endVertex, int indexOfEnd, ArrayList<Vertex> vertices,boolean isDirected) {
+        if (startVertex.getAdjacentVertices().size() == 1) {
+            return true;
+        }
+        boolean[] isVisited = new boolean[vertices.size()];
+        int numberOfEdgesThatCanBeVisited = dfsCount(startVertex, isVisited);
+        removeEdge(startVertex , endVertex , isDirected );
+        isVisited = new boolean[vertices.size()];
+        int numberOfEdgesThatCanBeVisitedAfterRemoving = dfsCount(endVertex, isVisited);
+        addEdge(startVertex , endVertex , indexOfEnd, isDirected);
+        return !(numberOfEdgesThatCanBeVisited > numberOfEdgesThatCanBeVisitedAfterRemoving);
+    }
+
+    private int dfsCount(Vertex vertex, boolean[] isVisited) {
+        isVisited[vertex.getIndex()] = true;
+        int counter = 1;
+        for (Vertex adjacentVertex : vertex.getAdjacentVertices()) {
+            if (!isVisited[adjacentVertex.getIndex()]) {
+                counter = counter + dfsCount(adjacentVertex, isVisited);
+            }
+        }
+        return counter;
+    }
+
+    private int canBeDirectedEuler() {
+        int outGoDegree;
+        int inGoDegree;
+        int numberOfVerticesWhereOutBiggerThanIn = 0;
+        int numberOfVerticesWhereInBiggerThanOut = 0;
+        int indexOfStartVertex = -1;
+        for (int i = 0; i < graphVertices.size(); i++) {
+            Vertex vertex = graphVertices.get(i);
+            outGoDegree = vertex.getAdjacentVertices().size();
+            inGoDegree = 0;
+            for (Edge graphEdge : graphEdges) {
+                if (graphEdge.getTermination().getVertexName().equals(vertex.getVertexName())) {
+                    inGoDegree++;
+                }
+            }
+            if (outGoDegree != inGoDegree) {
+                int difference = outGoDegree - inGoDegree;
+                if (difference == 1 && numberOfVerticesWhereOutBiggerThanIn == 0) {
+                    numberOfVerticesWhereOutBiggerThanIn++;
+                    indexOfStartVertex = i;
+                } else if (difference == -1 && numberOfVerticesWhereInBiggerThanOut == 0) {
+                    numberOfVerticesWhereInBiggerThanOut++;
+                } else {
+                    return -1;
+                }
+            }
+        }
+        if (indexOfStartVertex > -1) {
+            return indexOfStartVertex;
+        }
+        indexOfStartVertex = -2;
+        return indexOfStartVertex;
+    }
+
+    private ArrayList<Vertex> deepCopyForVertices() {
+        ArrayList<Vertex> tempVertices = new ArrayList<>();
+        for (Vertex vertex : graphVertices) {
+            tempVertices.add(new Vertex(vertex.getVertexName(), vertex.getIndex()));
+        }
+        for (int i = 0; i < graphVertices.size(); i++) {
+            Vertex vertex = graphVertices.get(i);
+            ArrayList<Vertex> adjacentVertices = vertex.getAdjacentVertices();
+            for (Vertex adjacentVertex : adjacentVertices) {
+                tempVertices.get(i).addAdjacentVertex(tempVertices.get(adjacentVertex.getIndex()));
+            }
+        }
+        return tempVertices;
+    }
+
+    private void removeEdge(Vertex startVertex, Vertex endVertex, boolean isDirected) {
+
+        startVertex.getAdjacentVertices().remove(endVertex);
+        if (!isDirected) {
+            endVertex.getAdjacentVertices().remove(startVertex);
+        }
+    }
+
+    private void addEdge(Vertex startVertex , Vertex endVertex , int index , boolean isDirected) {
+        if(isDirected){
+            startVertex.getAdjacentVertices().add(index,endVertex);
+        }
+        else {
+            startVertex.getAdjacentVertices().add(endVertex);
+            endVertex.getAdjacentVertices().add(startVertex);
+        }
+    }
+    private int canBeEuler(){
+        int numberOfOdd = 0;
+        for (Vertex graphVertex : graphVertices) {
+            if ((graphVertex.getAdjacentVertices().size()) % 2 == 1) {
+                numberOfOdd++;
+            }
+        }
+        if(numberOfOdd>2 || numberOfOdd==1){
+            return -1;//no euler path or circle
+        }else if(numberOfOdd==2){
+            return 1; // euler path
+        }else {
+            return 0; // euler circle
+        }
+    }
+    private int getOddVertex(){
+        for(int i=0 ; i<graphVertices.size() ; i++){
+            if((graphVertices.get(i).getAdjacentVertices().size())%2==1){
+                return i;
+            }
+        }
+        return -1;
     }
 }

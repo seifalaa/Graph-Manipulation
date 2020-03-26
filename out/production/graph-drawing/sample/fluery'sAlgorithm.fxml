@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="552.0" prefWidth="518.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FlueryAlgorithm">
+   <children>
+      <ImageView fx:id="graphImage" fitHeight="369.0" fitWidth="496.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="showGraphBtn" disable="true" layoutX="429.0" layoutY="512.0" mnemonicParsing="false" onAction="#showGraph" text="Show Graph" />
+      <ProgressBar fx:id="progressPar" layoutX="218.0" layoutY="516.0" prefWidth="200.0" progress="0.0" />
+      <Label layoutX="218.0" layoutY="498.0" text="Generating Graph" />
+      <Label fx:id="resultLbl" layoutX="14.0" layoutY="440.0" opacity="0.0" text="temp text">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

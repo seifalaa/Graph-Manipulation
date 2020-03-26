@@ -10,7 +10,7 @@
       <ImageView fx:id="outputImage" fitHeight="369.0" fitWidth="496.0" layoutX="506.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="184.0" layoutY="14.0" text="Input Graph" />
       <Label layoutX="734.0" layoutY="14.0" text="Output Graph" />
-      <Button fx:id="showGraphsBtn" layoutX="887.0" layoutY="444.0" mnemonicParsing="false" onAction="#showGraphs" text="Show Graphs" />
+      <Button fx:id="showGraphsBtn" disable="true" layoutX="887.0" layoutY="444.0" mnemonicParsing="false" onAction="#showGraphs" text="Show Graphs" />
       <ProgressBar fx:id="progressPar" layoutX="680.0" layoutY="448.0" prefWidth="200.0" progress="0.0" />
       <Label layoutX="680.0" layoutY="427.0" text="Generating Graphs" />
    </children>

@@ -1,7 +1,8 @@
-2
-2
+3
+3
 Directed
-a,b,
-Blue,Yellow,
+a,b,c,
+Blue,Yellow,Red,
 e1,a,b
-e2,a,b
+e2,b,c
+e3,c,a

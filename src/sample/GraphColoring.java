@@ -38,6 +38,7 @@ public class GraphColoring {
         colorGraph();
         callDrawingPrograms();
         setProgressPar();
+        showGraphsBtn.setDisable(false);
 
     }
     public void colorGraph() throws IOException {
@@ -90,8 +91,8 @@ public class GraphColoring {
     public void setImages()
     {
         try {
-            inputImage.setImage(new Image(new File("E:\\books\\6th semester\\algorithms\\graph-drawing\\graph.png").toURL().toString()));
-            outputImage.setImage(new Image(new File("E:\\books\\6th semester\\algorithms\\graph-drawing\\coloredGraph.png").toURL().toString()));
+            inputImage.setImage(new Image(new File("graph.png").toURL().toString()));
+            outputImage.setImage(new Image(new File("coloredGraph.png").toURL().toString()));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -99,8 +100,8 @@ public class GraphColoring {
     public void callDrawingPrograms()
     {
         try {
-            Runtime.getRuntime().exec("E:\\books\\6th semester\\algorithms\\graph-drawing\\main.exe");
-            Runtime.getRuntime().exec("E:\\books\\6th semester\\algorithms\\graph-drawing\\coloredGraph.exe");
+            Runtime.getRuntime().exec("main.exe");
+            Runtime.getRuntime().exec("coloredGraph.exe");
         } catch (IOException e) {
             e.printStackTrace();
         }

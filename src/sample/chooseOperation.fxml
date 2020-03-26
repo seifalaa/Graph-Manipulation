@@ -19,12 +19,12 @@
             <Font size="17.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="42.0" layoutY="188.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$g1">
+      <RadioButton fx:id="flury" layoutX="42.0" layoutY="188.0" mnemonicParsing="false" text="Fluery's Algorithm" toggleGroup="$g1">
          <font>
             <Font size="17.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="42.0" layoutY="230.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$g1">
+      <RadioButton fx:id="MST" layoutX="42.0" layoutY="230.0" mnemonicParsing="false" text="Minimum Spanning Tree" toggleGroup="$g1">
          <font>
             <Font size="17.0" />
          </font>

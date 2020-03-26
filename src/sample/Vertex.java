@@ -5,11 +5,13 @@ import java.util.ArrayList;
 public class Vertex {
     private String vertexName;
     private String vertexColor;
+    private int index;
     private ArrayList<Vertex>adjacentVertices = new ArrayList<>();
     private ArrayList<Integer>numberOfEdgesWithEachAdjacentVertex = new ArrayList<>();
-    public Vertex(String vertexName)
+    public Vertex(String vertexName , int index)
     {
         this.vertexName=vertexName;
+        this.index = index;
     }
     public ArrayList<Integer> getNumberOfEdgesWithEachAdjacentVertex() {
         return numberOfEdgesWithEachAdjacentVertex;
@@ -57,5 +59,9 @@ public class Vertex {
 
     public void setVertexColor(String vertexColor) {
         this.vertexColor = vertexColor;
+    }
+
+    public int getIndex() {
+        return index;
     }
 }
