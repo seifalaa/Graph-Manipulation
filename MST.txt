@@ -1,4 +1,5 @@
-2
+3
 Directed
 e1,1,a,b
 e2,2,b,c
+e3,3,c,a

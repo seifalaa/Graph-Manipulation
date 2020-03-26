@@ -23,13 +23,17 @@ public class ChooseOperationController {
     public RadioButton gR = new RadioButton();
     public RadioButton flury = new RadioButton();
     public RadioButton MST = new RadioButton();
+    public RadioButton MHC = new RadioButton();
+    public RadioButton MHPC = new RadioButton();
     private Graph graph = new Graph();
     private int numberOfVertexes;
     private String graphType;
     private int numberOfEdges;
+
     public ChooseOperationController() throws FileNotFoundException {
         readGraph();
     }
+
     @FXML
     private ToggleGroup g1;
 
@@ -46,59 +50,74 @@ public class ChooseOperationController {
 
     @FXML
     void choose(ActionEvent actionEvent) throws IOException {
-        if(gR.isSelected())
-        {
+        if (gR.isSelected()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("graphRepresentation.fxml"));
             Parent root = loader.load();
             GraphRepresentationController obj = loader.getController();
-            obj.setGraph(graph,numberOfVertexes,numberOfEdges,graphType);
+            obj.setGraph(graph, numberOfVertexes, numberOfEdges, graphType);
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Graph Representations");
             stage.show();
-        }
-        else if(gC.isSelected())
-        {
+        } else if (gC.isSelected()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("graphColoring.fxml"));
             Parent root = loader.load();
             GraphColoring obj = loader.getController();
-            obj.getGraph(graph,numberOfVertexes,numberOfEdges,graphType);
+            obj.getGraph(graph, numberOfVertexes, numberOfEdges, graphType);
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Graph Coloring");
             stage.show();
-        }
-        else if(flury.isSelected())
-        {
+        } else if (flury.isSelected()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("fluery'sAlgorithm.fxml"));
             Parent root = loader.load();
             FlueryAlgorithm obj = loader.getController();
-            obj.getGraph(graph,graphType);
+            obj.getGraph(graph, graphType);
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Fluery's Algorithm");
             stage.show();
-        }
-        else if(MST.isSelected())
-        {
+        } else if (MST.isSelected()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("minimumSpanningTree.fxml"));
             Parent root = loader.load();
             MinimumSpanningTree obj = loader.getController();
-            obj.getGraph(graph,numberOfEdges,graphType);
+            obj.getGraph(graph, numberOfEdges, graphType);
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Minimum Spanning Tree");
             stage.show();
         }
+        else if(MHC.isSelected())
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("minimumHamiltonCircuit.fxml"));
+            Parent root = loader.load();
+            MinimumHamiltonCircuit obj = loader.getController();
+            obj.getGraph(graph, numberOfEdges, graphType);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Minimum Hamilton Circuit");
+            stage.show();
+        }
+        else if(MHPC.isSelected())
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("hamiltonCircuit.fxml"));
+            Parent root = loader.load();
+            HamiltonCircuit obj = loader.getController();
+            obj.getGraph(graph,graphType);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Hamilton Circuit & Hamilton Path");
+            stage.show();
+        }
 
 
     }
+
     public void readGraph() throws FileNotFoundException {
         Scanner input = new Scanner(new File("graph.txt"));
-        ArrayList<String>content = new ArrayList<>();
-        while(input.hasNext())
-        {
-            String line  = input.nextLine();
+        ArrayList<String> content = new ArrayList<>();
+        while (input.hasNext()) {
+            String line = input.nextLine();
             content.add(line);
         }
         input.close();
@@ -106,25 +125,19 @@ public class ChooseOperationController {
         numberOfEdges = Integer.parseInt(content.get(1));
         graphType = content.get(2);
         String[] vertexes = content.get(3).split(",");
-        for(int i=0;i<numberOfVertexes;i++)
-        {
+        for (int i = 0; i < numberOfVertexes; i++) {
             graph.addVertex(vertexes[i]);
         }
-        if(graphType.equals("Directed"))
-        {
-            for(int i=0;i<numberOfEdges;i++)
-            {
-                String[] edge = content.get(i+4).split(",");
-                graph.addDirectedEdge(edge[0],Integer.parseInt(edge[1]),edge[2],edge[3]);
+        if (graphType.equals("Directed")) {
+            for (int i = 0; i < numberOfEdges; i++) {
+                String[] edge = content.get(i + 4).split(",");
+                graph.addDirectedEdge(edge[0], Integer.parseInt(edge[1]), edge[2], edge[3]);
             }
 
-        }
-        else if(graphType.equals("Undirected"))
-        {
-            for(int i=0;i<numberOfEdges;i++)
-            {
-                String[] edge = content.get(i+4).split(",");
-                graph.addUndirectedEdge(edge[0],Integer.parseInt(edge[1]),edge[2],edge[3]);
+        } else if (graphType.equals("Undirected")) {
+            for (int i = 0; i < numberOfEdges; i++) {
+                String[] edge = content.get(i + 4).split(",");
+                graph.addUndirectedEdge(edge[0], Integer.parseInt(edge[1]), edge[2], edge[3]);
             }
         }
     }

@@ -15,7 +15,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
 
         Parent root = FXMLLoader.load(getClass().getResource("welcomePage.fxml"));
         primaryStage.setTitle("Graph Manipulation");
@@ -35,8 +35,7 @@ public class Main extends Application {
         boolean delete = file.delete();
         boolean delete1 = file1.delete();
         boolean delete2 = file2.delete();
-        if(delete && delete1 && delete2)
-        {
+        if (delete && delete1 && delete2) {
             System.out.println("files deleted successfully");
             System.exit(0);
         }
