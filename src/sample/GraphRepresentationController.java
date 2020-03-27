@@ -1,13 +1,7 @@
 package sample;
 
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -17,18 +11,14 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.util.Duration;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class GraphRepresentationController implements Initializable {
+public class GraphRepresentationController implements  Runnable {
     public ImageView graphImage = new ImageView();
     public TableView<EdgeForTabel> table = new TableView<>();
     public TableColumn<EdgeForTabel, String> edgesNamesTbl = new TableColumn<>();
@@ -48,40 +38,15 @@ public class GraphRepresentationController implements Initializable {
     public GridPane adjGrid = new GridPane();
     public GridPane repMatrixGrid = new GridPane();
     public GridPane incGrid = new GridPane();
+    public Label genrationGraphLabel;
 
-    public GraphRepresentationController() {
-        try {
-            Runtime.getRuntime().exec("main.exe");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        new java.util.Timer().schedule(
-                new java.util.TimerTask() {
-                    @Override
-                    public void run() {
-                        showGraphBtn.setDisable(false);
-                    }
-                },
-                6000
-        );
-
+    public GraphRepresentationController()  {
     }
 
-    public void showGraph(ActionEvent actionEvent) {
-        try {
-            graphImage.setImage(new Image(new File("graph.png").toURL().toString()));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+    public void showGraph() {
+        graphImage.setImage(new Image(new File("graph.png").toURI().toString()));
         table.setOpacity(1);
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
-
     public void setGraph(Graph graph, int numberOfVertexes, int numberOfEdges, String graphType) throws FileNotFoundException {
         this.graph = graph;
         this.numberOfEdges = numberOfEdges;
@@ -89,7 +54,6 @@ public class GraphRepresentationController implements Initializable {
         this.graphType = graphType;
 
         fillTable();
-        setProgressPar();
         showAdjList();
         showAdjMatrix();
         showIncidenceMatrix();
@@ -120,26 +84,6 @@ public class GraphRepresentationController implements Initializable {
         edgesEndVertex.setCellValueFactory(new PropertyValueFactory<>("To"));
     }
 
-    public void setProgressPar() {
-        Timeline timeline = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(progressPar.progressProperty(), 0)),
-                new KeyFrame(Duration.seconds(6), e -> {
-                }, new KeyValue(progressPar.progressProperty(), 1))
-        );
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
-        new java.util.Timer().schedule(
-                new java.util.TimerTask() {
-                    @Override
-                    public void run() {
-                        timeline.stop();
-
-
-                    }
-                },
-                6000
-        );
-    }
 
     public void showAdjList() {
         if (graphType.equals("Directed")) {
@@ -501,4 +445,15 @@ public class GraphRepresentationController implements Initializable {
 
     }
 
+    @Override
+    public void run() {
+        try {
+            Process process = Runtime.getRuntime().exec("main.exe");
+            process.waitFor();
+        } catch (InterruptedException | IOException e) {
+            e.printStackTrace();
+        }
+        genrationGraphLabel.setOpacity(0);
+        showGraph();
+    }
 }

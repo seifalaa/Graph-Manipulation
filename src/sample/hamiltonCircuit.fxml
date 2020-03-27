@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <AnchorPane prefHeight="604.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HamiltonCircuit">
    <children>
       <ImageView fx:id="graphImage" fitHeight="369.0" fitWidth="496.0" layoutX="52.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" />
@@ -18,8 +17,6 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Button fx:id="showGraphBtn" disable="true" layoutX="498.0" layoutY="564.0" mnemonicParsing="false" onAction="#showGraph" text="Show Grah" />
-      <ProgressBar fx:id="progressPar" layoutX="290.0" layoutY="568.0" prefWidth="200.0" progress="0.0" />
-      <Label layoutX="290.0" layoutY="544.0" text="Generating Graph" />
+      <Label fx:id="generationGraphLabel" layoutX="220.0" layoutY="293.0" text="Generating graph, Please wait." />
    </children>
 </AnchorPane>

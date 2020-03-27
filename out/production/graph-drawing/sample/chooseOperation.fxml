@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ChooseOperationController">
    <children>
       <RadioButton fx:id="gR" layoutX="42.0" layoutY="104.0" mnemonicParsing="false" text="Graph Representation">
@@ -40,7 +39,7 @@
          </font>
       </Label>
       <Button layoutX="438.0" layoutY="361.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="56.0" text="Back" />
-      <Button layoutX="510.0" layoutY="361.0" mnemonicParsing="false" onAction="#choose" prefHeight="26.0" prefWidth="68.0" text="Choose" />
+      <Button fx:id="chooseButton" layoutX="510.0" layoutY="361.0" mnemonicParsing="false" onAction="#choose" prefHeight="26.0" prefWidth="68.0" text="Choose" />
       <RadioButton fx:id="MHPC" layoutX="42.0" layoutY="316.0" mnemonicParsing="false" text="Hamilton Path &amp; Hamilton Circuit" toggleGroup="$g1">
 
          <font>

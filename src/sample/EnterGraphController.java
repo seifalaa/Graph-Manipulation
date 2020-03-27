@@ -7,13 +7,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.*;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class EnterGraphController {
@@ -161,6 +159,8 @@ public class EnterGraphController {
         fadeout.playFromStart();
         enterDataBtn.setDisable(true);
         chooseOperationBtn.setDisable(false);
+        addEdgeBtn.setDisable(false);
+        addVertexBtn.setDisable(false);
     }
 
     public void chooseOperation(ActionEvent actionEvent) throws IOException {

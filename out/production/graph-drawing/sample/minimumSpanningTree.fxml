@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <AnchorPane prefHeight="698.0" prefWidth="1093.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MinimumSpanningTree">
    <children>
       <ImageView fx:id="inputImage" fitHeight="369.0" fitWidth="496.0" layoutX="14.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
@@ -24,10 +23,8 @@
             <TableColumn fx:id="outputEndVertexCol" prefWidth="159.2000732421875" text="Edge EndVertex" />
          </columns>
       </TableView>
-      <Button fx:id="showGraphBtn" disable="true" layoutX="972.0" layoutY="658.0" mnemonicParsing="false" onAction="#showGraphs" text="Show Graphs" />
-      <ProgressBar fx:id="progressPar" layoutX="761.0" layoutY="662.0" prefWidth="200.0" progress="0.0" />
-      <Label layoutX="761.0" layoutY="641.0" text="Generating graphs" />
-      <Label layoutX="201.0" layoutY="14.0" text="Input Graph" />
-      <Label layoutX="762.0" layoutY="14.0" text="Output Graph" />
+      <Label fx:id="inputGraphLabel" layoutX="201.0" layoutY="14.0" opacity="0.0" text="Input Graph" />
+      <Label fx:id="outputGraphLabel" layoutX="762.0" layoutY="14.0" opacity="0.0" text="Output Graph" />
+      <Label fx:id="genrationGraphLabel" layoutX="469.0" layoutY="304.0" text="Genrating graph, Please wait." />
    </children>
 </AnchorPane>

@@ -1,7 +1,10 @@
-3
-3
-Directed
-a,b,c,
-e1,1,a,b
-e2,2,b,c
-e3,3,c,a
+4
+6
+Undirected
+a,b,c,d,
+e1,10,a,b
+e2,15,a,c
+e3,10,a,d
+e4,20,b,c
+e5,25,b,d
+e6,30,c,d

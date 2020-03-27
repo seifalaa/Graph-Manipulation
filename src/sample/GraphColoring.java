@@ -1,28 +1,24 @@
 package sample;
 
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.util.Duration;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 
-public class GraphColoring {
+public class GraphColoring implements Runnable {
 
     public ImageView inputImage = new ImageView();
     public ImageView outputImage = new ImageView();
-    public Button showGraphsBtn = new Button();
     public ProgressBar progressPar = new ProgressBar();
+    public Label genrationGraphText;
+    public Label outputGraphLabel;
+    public Label inputGraphLabel;
     private Graph graph = new Graph();
     private int numberOfVertexes;
     private int numberOfEdges;
@@ -38,9 +34,8 @@ public class GraphColoring {
         this.numberOfEdges = numberOfEdges;
         this.graphType = graphType;
         colorGraph();
-        callDrawingPrograms();
-        setProgressPar();
-        showGraphsBtn.setDisable(false);
+
+        //setProgressPar();
 
     }
 
@@ -65,46 +60,32 @@ public class GraphColoring {
         }
 
         writer.close();
+
     }
-
-    public void setProgressPar() {
-        Timeline timeline = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(progressPar.progressProperty(), 0)),
-                new KeyFrame(Duration.seconds(6), e -> {
-                }, new KeyValue(progressPar.progressProperty(), 1))
-        );
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
-        new java.util.Timer().schedule(
-                new java.util.TimerTask() {
-                    @Override
-                    public void run() {
-                        timeline.stop();
-
-
-                    }
-                },
-                6000
-        );
-    }
-
     public void setImages() {
-        try {
-            inputImage.setImage(new Image(new File("graph.png").toURL().toString()));
-            outputImage.setImage(new Image(new File("coloredGraph.png").toURL().toString()));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+        inputImage.setImage(new Image(new File("graph.png").toURI().toString()));
+        outputImage.setImage(new Image(new File("coloredGraph.png").toURI().toString()));
     }
 
     public void callDrawingPrograms() {
         try {
             Runtime.getRuntime().exec("main.exe");
-            Runtime.getRuntime().exec("coloredGraph.exe");
+            Process process = Runtime.getRuntime().exec("coloredGraph.exe");
+            process.waitFor();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
     }
 
+    @Override
+    public void run() {
+        callDrawingPrograms();
+        genrationGraphText.setOpacity(0);
+        inputGraphLabel.setOpacity(1);
+        outputGraphLabel.setOpacity(1);
+        setImages();
+    }
 }

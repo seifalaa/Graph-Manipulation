@@ -1,20 +1,13 @@
 package sample;
 
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ProgressBar;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.util.Duration;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -22,12 +15,10 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 
-public class MinimumHamiltonCircuit {
+public class MinimumHamiltonCircuit implements Runnable{
 
     public ImageView inputImage = new ImageView();
     public ImageView outputImage = new ImageView();
-    public Button showGraphBtn = new Button();
-    public ProgressBar progressPar = new ProgressBar();
     public TableColumn<EdgeForTabel,String> inputEdgeName = new TableColumn<>();
     public TableColumn<EdgeForTabel,String> inputEdgeWeight = new TableColumn<>();
     public TableColumn<EdgeForTabel,String> inputEdgeStartVertex = new TableColumn<>();
@@ -38,9 +29,10 @@ public class MinimumHamiltonCircuit {
     public TableColumn<EdgeForTabel,String> outputEdgeEndVertex = new TableColumn<>();
     public TableView<EdgeForTabel> inputTbl = new TableView<>();
     public TableView<EdgeForTabel> outputTbl = new TableView<>();
+    public Label generatingGraphLabel;
     private int numberOfEdges;
 
-    public void showGraph(ActionEvent actionEvent) {
+    public void showGraph() {
         try {
             inputImage.setImage(new Image(new File("graph.png").toURL().toString()));
             outputImage.setImage(new Image(new File("MST.png").toURL().toString()));
@@ -53,36 +45,12 @@ public class MinimumHamiltonCircuit {
     public void getGraph(Graph graph , int numberOfEdges , String graphType) throws IOException {
         this.numberOfEdges = numberOfEdges;
         ArrayList<Edge>edges = graph.runSalesManProblem();
-        for(int i=0;i<edges.size();i++)
-        {
-            System.out.print(edges.get(i).getEdgeName()+" ");
+        for (Edge edge : edges) {
+            System.out.print(edge.getEdgeName() + " ");
         }
         System.out.println();
         minimumHamiltonCircuit(edges,graphType);
         fillTables(edges,graph.getGraphEdges());
-        executeDrawingPrograms();
-        setProgressPar();
-        showGraphBtn.setDisable(false);
-    }
-    public void setProgressPar() {
-        Timeline timeline = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(progressPar.progressProperty(), 0)),
-                new KeyFrame(Duration.seconds(6), e -> {
-                }, new KeyValue(progressPar.progressProperty(), 1))
-        );
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
-        new java.util.Timer().schedule(
-                new java.util.TimerTask() {
-                    @Override
-                    public void run() {
-                        timeline.stop();
-
-
-                    }
-                },
-                6000
-        );
     }
     public void fillTables(ArrayList<Edge> outputEdges, ArrayList<Edge> inputEdges) {
         ArrayList<EdgeForTabel> edgeForTable = new ArrayList<>();
@@ -113,9 +81,12 @@ public class MinimumHamiltonCircuit {
     public void executeDrawingPrograms()
     {
         try {
-            Runtime.getRuntime().exec("main.exe");
-            Runtime.getRuntime().exec("minimumSpanningTree.exe");
-        } catch (IOException e) {
+            Process process = Runtime.getRuntime().exec("main.exe");
+            Process process1 = Runtime.getRuntime().exec("minimumSpanningTree.exe");
+            process.waitFor();
+            process1.waitFor();
+
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -127,5 +98,12 @@ public class MinimumHamiltonCircuit {
             writer.write(edge.getEdgeName() + "," + edge.getWeight() + "," + edge.getStart().getVertexName() + "," + edge.getTermination().getVertexName() + "\n");
         }
         writer.close();
+    }
+
+    @Override
+    public void run() {
+        executeDrawingPrograms();
+        generatingGraphLabel.setOpacity(0);
+        showGraph();
     }
 }
