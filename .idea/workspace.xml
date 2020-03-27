@@ -1,70 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="graph-drawing:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="adjusting incidence matrix">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/graph_drawing_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MST.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MST.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coloredGraph.py" beforeDir="false" afterPath="$PROJECT_DIR$/coloredGraph.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graph-drawing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/graph-drawing.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph.txt" beforeDir="false" afterPath="$PROJECT_DIR$/graph.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minimumSpanningTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/minimumSpanningTree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/ChooseOperationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/ChooseOperationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/DisjointSets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/DisjointSets.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/EnterGraphController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/EnterGraphController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/FlueryAlgorithm$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/FlueryAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/FlueryAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/Graph$SortEdge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/Graph$SortEdge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphColoring$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphColoring.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphColoring.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphRepresentationController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphRepresentationController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphRepresentationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphRepresentationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/HamiltonCircuit$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/HamiltonCircuit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/HamiltonCircuit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumHamiltonCircuit$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumHamiltonCircuit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumHamiltonCircuit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumSpanningTree$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumSpanningTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumSpanningTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/chooseOperation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/chooseOperation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/enterGraph.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/enterGraph.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/fluery'sAlgorithm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/fluery'sAlgorithm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/graphColoring.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/graphColoring.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/graphRepresentation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/graphRepresentation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/hamiltonCircuit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/hamiltonCircuit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/minimumHamiltonCircuit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/minimumHamiltonCircuit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/minimumSpanningTree.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/minimumSpanningTree.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/welcomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/welcomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/AdjListTableContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/AdjListTableContent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ChooseOperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ChooseOperationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/DisjointSets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/DisjointSets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/EdgeForTabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/EdgeForTabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/EnterGraphController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/EnterGraphController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/FlueryAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/FlueryAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GraphColoring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GraphColoring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GraphRepresentationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GraphRepresentationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/HamiltonCircuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/HamiltonCircuit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/MinimumHamiltonCircuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MinimumHamiltonCircuit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/MinimumSpanningTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MinimumSpanningTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Vertex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/WelcomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/WelcomePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/chooseOperation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/chooseOperation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/enterGraph.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/enterGraph.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/fluery'sAlgorithm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/fluery'sAlgorithm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/graphColoring.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/graphColoring.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/graphRepresentation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/graphRepresentation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/hamiltonCircuit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/hamiltonCircuit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/minimumHamiltonCircuit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/minimumHamiltonCircuit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/minimumSpanningTree.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/minimumSpanningTree.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/welcomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/welcomePage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,10 +101,11 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/OS/disk-scheduling" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -327,6 +274,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1585324018172" />
+    <state x="499" y="216" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585326321796">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="499" y="216" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.864@0.0.1536.864" timestamp="1585326321796" />
     <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585130276276">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -343,22 +294,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="473" y="174" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585323772704" />
-    <state width="1493" height="225" key="GridCell.Tab.0.bottom" timestamp="1585325544207">
+    <state width="741" height="223" key="GridCell.Tab.0.bottom" timestamp="1585327301525">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="225" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585325544207" />
-    <state width="1493" height="225" key="GridCell.Tab.0.center" timestamp="1585325544207">
+    <state width="741" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585327301525" />
+    <state width="741" height="223" key="GridCell.Tab.0.center" timestamp="1585327301525">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="225" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1585325544207" />
-    <state width="1493" height="225" key="GridCell.Tab.0.left" timestamp="1585325544206">
+    <state width="741" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1585327301525" />
+    <state width="741" height="223" key="GridCell.Tab.0.left" timestamp="1585327301525">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="225" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1585325544206" />
-    <state width="1493" height="225" key="GridCell.Tab.0.right" timestamp="1585325544207">
+    <state width="741" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1585327301525" />
+    <state width="741" height="223" key="GridCell.Tab.0.right" timestamp="1585327301525">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="225" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1585325544207" />
+    <state width="741" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1585327301525" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1585245671637">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -375,10 +326,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1585245671637" />
-    <state x="249" y="7" key="SettingsEditor" timestamp="1585323774605">
+    <state x="249" y="7" key="SettingsEditor" timestamp="1585326338645">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="249" y="7" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1585323774605" />
+    <state x="249" y="7" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1585326338645" />
     <state x="463" y="30" width="609" height="804" key="find.popup" timestamp="1585064347834">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -391,6 +342,17 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1585054741273" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/graph_drawing$Main.ic" NAME="Main Coverage Results" MODIFIED="1584539075040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
