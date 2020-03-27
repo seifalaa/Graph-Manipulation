@@ -1,6 +1,5 @@
-import networkx as nx
 import matplotlib.pyplot as plt
-
+import networkx as nx
 
 file = open("graph.txt", "r")
 content = file.readlines()

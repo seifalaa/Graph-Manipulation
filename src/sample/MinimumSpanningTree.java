@@ -1,31 +1,26 @@
 package sample;
 
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ProgressBar;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.util.Duration;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 
 
-public class MinimumSpanningTree {
+public class MinimumSpanningTree implements Runnable{
 
+    public Label inputGraphLabel;
+    public Label outputGraphLabel;
+    public Label genrationGraphLabel;
     @FXML
     private ImageView inputImage = new ImageView();
 
@@ -62,20 +57,12 @@ public class MinimumSpanningTree {
     @FXML
     private TableColumn<EdgeForTabel, String> outputEndVertexCol = new TableColumn<>();
 
-    @FXML
-    private Button showGraphBtn = new Button();
 
-    @FXML
-    private ProgressBar progressPar = new ProgressBar();
     private int numberOfEdges;
 
-    public void showGraphs(ActionEvent actionEvent) {
-        try {
-            inputImage.setImage(new Image(new File("graph.png").toURL().toString()));
-            outputImage.setImage(new Image(new File("MST.png").toURL().toString()));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+    public void showGraphs() {
+        inputImage.setImage(new Image(new File("graph.png").toURI().toString()));
+        outputImage.setImage(new Image(new File("MST.png").toURI().toString()));
         inputTbl.setOpacity(1);
         outputTbl.setOpacity(1);
     }
@@ -87,21 +74,13 @@ public class MinimumSpanningTree {
             ArrayList<Edge> edges = graph.Kruskal();
             minimumSpanningTree(edges, graphType);
             fillTables(edges, graph.getGraphEdges());
-            executeDrawingProgram();
-            setProgressPar();
-            showGraphBtn.setDisable(false);
         }
         else if(graphType.equals("Directed"))
         {
             ArrayList<Edge> edges = graph.directedMinimumSpanningTree();
             minimumSpanningTree(edges, graphType);
             fillTables(edges, graph.getGraphEdges());
-            executeDrawingProgram();
-            setProgressPar();
-            showGraphBtn.setDisable(false);
         }
-
-
     }
 
     public void minimumSpanningTree(ArrayList<Edge> edges, String graphType) throws IOException {
@@ -114,32 +93,13 @@ public class MinimumSpanningTree {
         writer.close();
     }
 
-    public void setProgressPar() {
-        Timeline timeline = new Timeline(
-                new KeyFrame(Duration.ZERO, new KeyValue(progressPar.progressProperty(), 0)),
-                new KeyFrame(Duration.seconds(6), e -> {
-                }, new KeyValue(progressPar.progressProperty(), 1))
-        );
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
-        new java.util.Timer().schedule(
-                new java.util.TimerTask() {
-                    @Override
-                    public void run() {
-                        timeline.stop();
-
-
-                    }
-                },
-                6000
-        );
-    }
 
     public void executeDrawingProgram() {
         try {
             Runtime.getRuntime().exec("main.exe");
-            Runtime.getRuntime().exec("minimumSpanningTree.exe");
-        } catch (IOException e) {
+            Process process = Runtime.getRuntime().exec("minimumSpanningTree.exe");
+            process.waitFor();
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -167,6 +127,17 @@ public class MinimumSpanningTree {
         outputEdgeWeightCol.setCellValueFactory(new PropertyValueFactory<>("Weight"));
         outputStartVertexCol.setCellValueFactory(new PropertyValueFactory<>("From"));
         outputEndVertexCol.setCellValueFactory(new PropertyValueFactory<>("To"));
+
+
+    }
+
+    @Override
+    public void run() {
+        executeDrawingProgram();
+        genrationGraphLabel.setOpacity(0);
+        inputGraphLabel.setOpacity(1);
+        outputGraphLabel.setOpacity(1);
+        showGraphs();
 
 
     }

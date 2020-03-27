@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
-import jnr.ffi.annotations.In;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -50,6 +49,7 @@ public class ChooseOperationController {
 
     @FXML
     void choose(ActionEvent actionEvent) throws IOException {
+
         if (gR.isSelected()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("graphRepresentation.fxml"));
             Parent root = loader.load();
@@ -59,15 +59,19 @@ public class ChooseOperationController {
             stage.setScene(new Scene(root));
             stage.setTitle("Graph Representations");
             stage.show();
+            Thread thread = new Thread(obj);
+            thread.start();
         } else if (gC.isSelected()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("graphColoring.fxml"));
             Parent root = loader.load();
             GraphColoring obj = loader.getController();
-            obj.getGraph(graph, numberOfVertexes, numberOfEdges, graphType);
             Stage stage = new Stage();
+            obj.getGraph(graph, numberOfVertexes, numberOfEdges, graphType);
             stage.setScene(new Scene(root));
             stage.setTitle("Graph Coloring");
             stage.show();
+            Thread thread = new Thread(obj);
+            thread.start();
         } else if (flury.isSelected()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("fluery'sAlgorithm.fxml"));
             Parent root = loader.load();
@@ -77,6 +81,8 @@ public class ChooseOperationController {
             stage.setScene(new Scene(root));
             stage.setTitle("Fluery's Algorithm");
             stage.show();
+            Thread thread = new Thread(obj);
+            thread.start();
         } else if (MST.isSelected()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("minimumSpanningTree.fxml"));
             Parent root = loader.load();
@@ -86,6 +92,8 @@ public class ChooseOperationController {
             stage.setScene(new Scene(root));
             stage.setTitle("Minimum Spanning Tree");
             stage.show();
+            Thread thread = new Thread(obj);
+            thread.start();
         }
         else if(MHC.isSelected())
         {
@@ -97,6 +105,8 @@ public class ChooseOperationController {
             stage.setScene(new Scene(root));
             stage.setTitle("Minimum Hamilton Circuit");
             stage.show();
+            Thread thread = new Thread(obj);
+            thread.start();
         }
         else if(MHPC.isSelected())
         {
@@ -108,8 +118,9 @@ public class ChooseOperationController {
             stage.setScene(new Scene(root));
             stage.setTitle("Hamilton Circuit & Hamilton Path");
             stage.show();
+            Thread thread = new Thread(obj);
+            thread.start();
         }
-
 
     }
 

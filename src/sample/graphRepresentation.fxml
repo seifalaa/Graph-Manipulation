@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="905.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GraphRepresentationController">
   <tabs>
     <Tab text="Graph">
@@ -20,9 +19,7 @@
                         <TableColumn fx:id="edgesEndVertex" prefWidth="75.20001220703125" text="End" />
                     </columns>
                   </TableView>
-                  <Button fx:id="showGraphBtn" layoutX="798.0" layoutY="331.0" mnemonicParsing="false" onAction="#showGraph" prefHeight="25.0" prefWidth="94.0" text="Show Graph" />
-                  <ProgressBar fx:id="progressPar" layoutX="585.0" layoutY="336.0" prefWidth="200.0" progress="0.0" />
-                  <Label layoutX="585.0" layoutY="316.0" text="Generating Graph" />
+                  <Label fx:id="genrationGraphLabel" layoutX="157.0" layoutY="168.0" text="Generating graph, Please wait." />
                </children>
             </Pane>
          </content></Tab>

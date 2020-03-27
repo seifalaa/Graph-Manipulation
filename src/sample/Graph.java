@@ -473,18 +473,12 @@ public class Graph {
         int [][]adjMatrix = createAdjacencyMatrixSMP();
         int numberOfVertices = graphVertices.size();
         ArrayList<Integer> nodes = getMinimumRoute(adjMatrix,numberOfVertices);
-        for(int i=0;i<nodes.size();i++)
-        {
-            System.out.println(nodes.get(i));
-        }
-        for (int i = 0; i < nodes.size()-2 ; i++) {
-            Vertex startV = graphVertices.get(i);
+        for (int i = 0; i <= nodes.size()-2 ; i++) {
+            Vertex startV = graphVertices.get(nodes.get(i));
 
-            Vertex endV = graphVertices.get(i+1);
+            Vertex endV = graphVertices.get(nodes.get(i+1));
 
-            //System.out.println("Start "+startV.getVertexName()+" "+"End "+endV.getVertexName());
-            for (int j=0;j<graphEdges.size();j++) {
-                Edge e = graphEdges.get(j);
+            for (Edge e : graphEdges) {
                 if (startV.equals(e.getStart()) && endV.equals(e.getTermination())) {
                     result.add(e);
                 }
@@ -521,20 +515,16 @@ public class Graph {
                 }
             }
             System.out.println(minCostIndex);
-            //visited.add(minCostIndex);
             minRout.add(minCost);
             node = minCostIndex;
             visited.add(node);
         }
         minRout.add(adjMatrix[startNode][node]);
         visited.add(startNode);
-        //System.out.println("minrout"+minRout.size());
-
-
         System.out.println("visSIze "+visited.size());
         return visited;
     }
-    public boolean checkSafe(int v, int graph[][], ArrayList<Integer> path, int pos){
+    public boolean checkSafe(int v, int[][] graph, ArrayList<Integer> path, int pos){
         if (graph[path.get(pos - 1)][v] == 0)
             return false;
         for (int i = 0; i < pos; i++)
@@ -542,7 +532,7 @@ public class Graph {
                 return false;
         return true;
     }
-    public boolean createHamiltonCycle(int graph[][], ArrayList<Integer> path, int pos){
+    public boolean createHamiltonCycle(int[][] graph, ArrayList<Integer> path, int pos){
         if (pos == graphVertices.size()) {
             if (graph[path.get(pos - 1)][path.get(0)] == 1)
                 return true;
@@ -559,7 +549,7 @@ public class Graph {
         }
         return false;
     }
-    public boolean createHamiltonPath(int graph[][], ArrayList<Integer> path, int pos){
+    public boolean createHamiltonPath(int[][] graph, ArrayList<Integer> path, int pos){
         if (pos == graphVertices.size())
             return true;
         for (int v = 1; v < graphVertices.size(); v++){
@@ -665,20 +655,17 @@ public class Graph {
         ArrayList<Vertex> tempVertices = new ArrayList<>();
         ArrayList<Edge> edges = new ArrayList<>(graphEdges);
         edges.sort(new SortEdge());
-        for(int i = 0;i < graphVertices.size();i++)
-        {
-            tempVertices.add(new Vertex(graphVertices.get(i).getVertexName()));
+        for (Vertex graphVertex : graphVertices) {
+            tempVertices.add(new Vertex(graphVertex.getVertexName()));
         }
-        for(int i = 0;i < edges.size();i++)
-        {
+        for (Edge edge : edges) {
             ArrayList<Vertex> visited = new ArrayList<>();
-            Edge e = edges.get(i);
+            Edge e = edge;
             System.out.println(e.getEdgeName() + " " + e.getStart().getVertexName() + " " + e.getTermination().getVertexName());
-            Vertex Start = findInTemp(e.getStart(),tempVertices);
-            Vertex End = findInTemp(e.getTermination(),tempVertices);
-            dfs(Start,visited);
-            if(!visited.contains(End))
-            {
+            Vertex Start = findInTemp(e.getStart(), tempVertices);
+            Vertex End = findInTemp(e.getTermination(), tempVertices);
+            dfs(Start, visited);
+            if (!visited.contains(End)) {
                 Start.addAdjacentVertex(End);
                 result.add(e);
             }
@@ -687,10 +674,9 @@ public class Graph {
     }
 
     private Vertex findInTemp(Vertex vertex, ArrayList<Vertex> tempVertices) {
-        for(int i = 0;i < tempVertices.size();i++)
-        {
-            if(vertex.getVertexName().equals(tempVertices.get(i).getVertexName()))
-                return tempVertices.get(i);
+        for (Vertex tempVertex : tempVertices) {
+            if (vertex.getVertexName().equals(tempVertex.getVertexName()))
+                return tempVertex;
         }
         return null;
     }

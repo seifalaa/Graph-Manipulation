@@ -7,10 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import org.python.util.PythonInterpreter;
 
 import java.io.File;
-import java.io.IOException;
 
 public class Main extends Application {
 
