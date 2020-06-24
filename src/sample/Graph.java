@@ -1,22 +1,33 @@
 package sample;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import javafx.util.Pair;
+
+import java.util.*;
 
 
 public class Graph {
     private ArrayList<Vertex> graphVertices;
     private ArrayList<Edge> graphEdges;
-
+    boolean directed;
+    public Graph(boolean directed) {
+        graphVertices = new ArrayList<>();
+        graphEdges = new ArrayList<>();
+        this.directed = directed;
+    }
     public Graph() {
         graphVertices = new ArrayList<>();
         graphEdges = new ArrayList<>();
+
     }
 
-    public Graph(ArrayList<Vertex> graphVertices, ArrayList<Edge> graphEdges) {
+    public void setDirected(boolean directed) {
+        this.directed = directed;
+    }
+
+    public Graph(ArrayList<Vertex> graphVertices, ArrayList<Edge> graphEdges , boolean directed) {
         this.graphEdges = graphEdges;
         this.graphVertices = graphVertices;
+        this.directed = directed;
     }
 
     public Vertex getVertexByName(String vertexName) {
@@ -217,7 +228,7 @@ public class Graph {
         String[] colors = new String[]{"Blue", "Yellow", "Red", "Green"};
         int indexForColors = 0;
         int indexForRows = 0;
-        while (numberOfColoredVertices != graphVertices.size()) {
+        while (numberOfColoredVertices < graphVertices.size()) {
             graphVertices.get(indexForRows).setVertexColor(colors[indexForColors]);
             numberOfColoredVertices++;
             for (int i = 0; i < adjacencyMatrix[0].length; i++) {
@@ -230,7 +241,7 @@ public class Graph {
                     } else {
                         boolean canColor = true;
                         for (Integer integer : colored) {
-                            if (adjacencyMatrix[i][integer] == 1) {
+                            if (adjacencyMatrix[i][integer] == 1 || adjacencyMatrix[integer][i]==1) {
                                 canColor = false;
                                 break;
                             }
@@ -295,7 +306,7 @@ public class Graph {
             route = new StringBuilder("Euler circuit : ");
             startVertex = vertices.get(0);
         }
-        startMoving(startVertex, route, vertices, true);
+        startMoving(startVertex, route, vertices, true , 0);
         return route.toString();
     }
 
@@ -313,13 +324,13 @@ public class Graph {
             route = new StringBuilder("Euler circuit : ");
             startVertex = vertices.get(0);
         }
-        startMoving(startVertex, route, vertices, false);
+        startMoving(startVertex, route, vertices, false , 0);
         return route.toString();
     }
 
-    private void startMoving(Vertex vertex, StringBuilder route, ArrayList<Vertex> vertices, boolean isDirected) {
+    private void startMoving(Vertex vertex, StringBuilder route, ArrayList<Vertex> vertices, boolean isDirected , int cost) {
         if (vertex.getAdjacentVertices().size() == 0) {
-            route.append(vertex.getVertexName());
+            route.append(vertex.getVertexName()).append("  Total cost: ").append(cost);
             return;
         }
         ArrayList<Vertex> adjacentVertices = vertex.getAdjacentVertices();
@@ -328,7 +339,14 @@ public class Graph {
             if (isValidNextEdge(vertex, adjacentVertex, i, vertices, isDirected)) {
                 route.append(vertex.getVertexName()).append(" -> ");
                 removeEdge(vertex, adjacentVertex, isDirected);
-                startMoving(adjacentVertex, route, vertices, isDirected);
+                int edgeIndex = findEdge(vertex.getVertexName() , adjacentVertex.getVertexName());
+                if(edgeIndex == -1){
+                    edgeIndex = findEdge(adjacentVertex.getVertexName() , vertex.getVertexName());
+                }
+                if(edgeIndex != -1){
+                    cost += graphEdges.get(edgeIndex).getWeight();
+                }
+                startMoving(adjacentVertex, route, vertices, isDirected , cost);
             }
         }
     }
@@ -470,7 +488,12 @@ public class Graph {
 
     public  ArrayList<Edge> runSalesManProblem() {
         ArrayList<Edge> result = new ArrayList<>();
-        int [][]adjMatrix = createAdjacencyMatrixSMP();
+        int [][]adjMatrix ;
+        if(directed){
+            adjMatrix = createDiWightMatrix();
+        }else{
+            adjMatrix = createWightMatrix();
+        }
         int numberOfVertices = graphVertices.size();
         ArrayList<Integer> nodes = getMinimumRoute(adjMatrix,numberOfVertices);
         for (int i = 0; i <= nodes.size()-2 ; i++) {
@@ -564,7 +587,12 @@ public class Graph {
     }
     public ArrayList<Integer> hamilton(String cycleOrPath){
         ArrayList<Integer> path = new ArrayList<>(graphVertices.size());
-        int[][] graph = createAdjacencyMatrix();
+        int [][]graph;
+        if(directed){
+            graph = createDiAdjacencyMatrix();
+        }else{
+            graph = createAdjacencyMatrix();
+        }
         for (int i = 0; i < graphVertices.size(); i++)
             path.add(-1);
         path.set(0,0);
@@ -600,6 +628,8 @@ public class Graph {
     }
 
     public ArrayList<String> fullHamilton(){
+        int costCircuit = 0;
+        int costPath = 0;
         String cycle = "Hamilton Circuit: ", path = "Hamilton Path: ";
         ArrayList<String> result = new ArrayList<>();
         ArrayList<Integer> listCycle = hamilton("cycle");
@@ -608,6 +638,13 @@ public class Graph {
                 cycle += "" + graphVertices.get(listCycle.get(i)).getVertexName();
                 if (i + 1 != listCycle.size())
                     cycle += " -> ";
+                int edgeIndex = findEdge(graphVertices.get(listCycle.get(i)).getVertexName() ,graphVertices.get(listCycle.get(i+1)).getVertexName());
+                if(edgeIndex == -1){
+                   edgeIndex =  findEdge(graphVertices.get(listCycle.get(i+1)).getVertexName() ,graphVertices.get(listCycle.get(i)).getVertexName());
+                }
+                if(edgeIndex!=-1){
+                    costCircuit+= graphEdges.get(edgeIndex).getWeight();
+                }
             }
         }
         else cycle = "No Hamilton Circuit\n";
@@ -617,22 +654,42 @@ public class Graph {
                 path += "" + graphVertices.get(listPath.get(i)).getVertexName();
                 if (i + 1 != listPath.size())
                     path += " -> ";
+                int edgeIndex = findEdge(graphVertices.get(listPath.get(i)).getVertexName() ,graphVertices.get(listPath.get(i+1)).getVertexName());
+                if(edgeIndex == -1){
+                    edgeIndex =  findEdge(graphVertices.get(listPath.get(i+1)).getVertexName() ,graphVertices.get(listPath.get(i)).getVertexName());
+                }
+                if(edgeIndex!=-1){
+                    costPath+= graphEdges.get(edgeIndex).getWeight();
+                }
             }
         }
         else path = "No Hamilton Path\n";
-        result.add(cycle);
-        result.add(path);
+        StringBuilder cycleBuilder = new StringBuilder(cycle);
+        cycleBuilder.append("  Total cost: ").append(costCircuit);
+        StringBuilder pathBuilder = new StringBuilder(path);
+        pathBuilder.append("  Total cost: ").append(costPath);
+        result.add(cycleBuilder.toString());
+        result.add(pathBuilder.toString());
         return result;
     }
     public ArrayList<String> diFullHamilton(){
         String cycle = "Hamilton Circuit: ", path = "Hamilton Path: ";
         ArrayList<String> result = new ArrayList<>();
         ArrayList<Integer> listCycle = DiHamilton("cycle");
+        int costCircuit = 0;
+        int costPath =0;
         if(listCycle != null) {
             for (int i = 0; i < listCycle.size(); i++) {
                 cycle += "" + graphVertices.get(listCycle.get(i)).getVertexName();
                 if (i + 1 != listCycle.size())
                     cycle += " -> ";
+                int edgeIndex = findEdge(graphVertices.get(listCycle.get(i)).getVertexName() ,graphVertices.get(listCycle.get(i+1)).getVertexName());
+                if(edgeIndex == -1){
+                    edgeIndex =  findEdge(graphVertices.get(listCycle.get(i+1)).getVertexName() ,graphVertices.get(listCycle.get(i)).getVertexName());
+                }
+                if(edgeIndex!=-1){
+                    costCircuit += graphEdges.get(edgeIndex).getWeight();
+                }
             }
         }
         else cycle = "No Hamilton Circuit\n";
@@ -642,11 +699,22 @@ public class Graph {
                 path += "" + graphVertices.get(listPath.get(i)).getVertexName();
                 if (i + 1 != listPath.size())
                     path += " -> ";
+                int edgeIndex = findEdge(graphVertices.get(listPath.get(i)).getVertexName() ,graphVertices.get(listPath.get(i+1)).getVertexName());
+                if(edgeIndex == -1){
+                    edgeIndex =  findEdge(graphVertices.get(listPath.get(i+1)).getVertexName() ,graphVertices.get(listPath.get(i)).getVertexName());
+                }
+                if(edgeIndex!=-1){
+                    costPath+= graphEdges.get(edgeIndex).getWeight();
+                }
             }
         }
         else path = "No Hamilton Path\n";
-        result.add(cycle);
-        result.add(path);
+        StringBuilder cycleBuilder = new StringBuilder(cycle);
+        cycleBuilder.append("  Total cost: ").append(costCircuit);
+        StringBuilder pathBuilder = new StringBuilder(path);
+        pathBuilder.append("  Total cost: ").append(costPath);
+        result.add(cycleBuilder.toString());
+        result.add(pathBuilder.toString());
         return result;
     }
     public ArrayList<Edge> directedMinimumSpanningTree()
@@ -693,5 +761,189 @@ public class Graph {
             return Integer.compare(e1.getWeight(), e2.getWeight());
         }
     }
+    private boolean breadthFirstSearch(int [][] graph , int startVertex,int endVertex,int [] parent){
+        parent[startVertex] = -1;
+        boolean [] visited = new boolean[graphVertices.size()];
+        visited[startVertex] = true;
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(startVertex);
+        while (!queue.isEmpty()){
+            int index = queue.poll();
+            for(int i=0 ; i<graphVertices.size() ; i++){
+                if(!visited[i] && graph[index][i]>0){
+                    queue.add(i);
+                    visited[i]=true;
+                    parent[i]=index;
+                }
+            }
+        }
+        return visited[endVertex];
+    }
+    public int maximumFlow(String startVertexName , String endVertexName){
+        int startVertexIndex = findVertex(startVertexName);
+        int endVertexIndex = findVertex(endVertexName);
+        int [][] matrix ;
+        if(directed){
+            matrix = createDiWightMatrix();
+        }else {
+            matrix = createWightMatrix();
+        }
+        int [] parent = new int[graphVertices.size()];
+        int maximumFlow = 0;
+        while (breadthFirstSearch(matrix , startVertexIndex , endVertexIndex , parent)){
+            int pathFlow = Integer.MAX_VALUE;
+            for(int i = endVertexIndex ; i!=startVertexIndex ; i=parent[i]){
+                int parentIndex = parent[i];
+                pathFlow = Math.min(pathFlow , matrix[parentIndex][i]);
+            }
+            for(int i= endVertexIndex ; i!=startVertexIndex ; i=parent[i]){
+                int parentIndex = parent[i];
+                matrix[parentIndex][i] -= pathFlow;
+                matrix[i][parentIndex]+= pathFlow;
+            }
+            maximumFlow+=pathFlow;
+        }
+        return maximumFlow;
+    }
+    private int minimumNode(int [] destination , boolean [] visited){
+        int minimum = Integer.MAX_VALUE ;
+        int minimumIndex = -1;
+        for(int i=0 ; i<graphVertices.size() ; i++){
+            if(!visited[i] && minimum>=destination[i]){
+                minimum = destination[i];
+                minimumIndex=i;
+            }
+        }
+        return minimumIndex;
+    }
+    public Pair<Graph , ArrayList<String>> dijkstra(String startVertex){
+        int startVertexIndex = findVertexNew(startVertex);
+        int [][] graph;
+        if(directed){
+            graph = createDiWightMatrix();
 
+        }else {
+            graph = createWightMatrix();
+        }
+        int [] destination = new int[graphVertices.size()];
+        int [] parents = new int[graphVertices.size()];
+        Arrays.fill(parents, -2);
+        boolean [] visited = new boolean[graphVertices.size()];
+        for(int i=0 ; i<graphVertices.size();i++){
+            destination[i]=Integer.MAX_VALUE;
+            visited[i]=false;
+        }
+        destination[startVertexIndex] = 0;
+        parents[startVertexIndex]=-1;
+        for(int i=0 ; i<graphVertices.size()-1;i++){
+            int nextNode = minimumNode(destination , visited);
+            visited[nextNode]=true;
+            for(int j=0 ; j<graphVertices.size() ; j++){
+                if(!visited[j] && graph[nextNode][j]!=0 && destination[nextNode]!=Integer.MAX_VALUE && destination[nextNode]+graph[nextNode][j]<destination[j]){
+                    parents[j] = nextNode;
+                    destination[j]=destination[nextNode]+graph[nextNode][j];
+                }
+            }
+        }
+        String [] paths = makePath(startVertexIndex,parents);
+        ArrayList<String> data = new ArrayList<>();
+        Graph shortestPathGraph = new Graph(directed);
+        int index =0;
+        for (String s : paths) {
+            if(s.equals("noPath")){
+                continue;
+            }
+            data.add(s+"/"+ destination[index++]);
+            String[] path = s.split("-");
+            for (int j = 0; j < path.length - 1; j++) {
+                Vertex start = graphVertices.get(findVertex(path[j]));
+                Vertex end = graphVertices.get(findVertex(path[j + 1]));
+                shortestPathGraph.addVertex(start.getVertexName());
+                shortestPathGraph.addVertex(end.getVertexName());
+                shortestPathGraph.addEdgeNew(start.getVertexName(), end.getVertexName(), graph[start.getIndex()][end.getIndex()] , "e"+j);
+            }
+        }
+        return new Pair<>(shortestPathGraph , data) ;
+    }
+    private String [] makePath (int source,int [] parents){
+        String [] path = new String [graphVertices.size()];
+        StringBuilder pathBuilder = new StringBuilder();
+        for(int i=0 ; i<graphVertices.size() ; i++){
+            getPath(i,source,parents , pathBuilder);
+            if(!pathBuilder.toString().equals("noPath")){
+                path[i]=pathBuilder.reverse().toString();
+            }else {
+                path[i]=pathBuilder.toString();
+            }
+            pathBuilder.delete(0,pathBuilder.length());
+        }
+        return path;
+    }
+    private void getPath (int currentVertex,int source , int [] parent , StringBuilder pathBuilder){
+        if(parent[currentVertex]==-1){
+            pathBuilder.append(graphVertices.get(source).getVertexName());
+            return;
+        }else if(parent[currentVertex]==-2){
+            pathBuilder.append("noPath");
+            return;
+        }
+        pathBuilder.append(graphVertices.get(currentVertex).getVertexName()).append("-");
+        getPath(parent[currentVertex],source , parent  , pathBuilder);
+    }
+    private boolean addEdgeNew(String startVertex , String endVertex , int weight ,String name){
+        int startVertexIndex = findVertexNew(startVertex);
+        int endVertexIndex = findVertexNew(endVertex);
+        int findEdge = findEdge(startVertex , endVertex);
+        if(startVertexIndex!=-1&&endVertexIndex!=-1&& weight > 0 && findEdge==-1){
+            graphEdges.add(new Edge(name, weight,graphVertices.get(startVertexIndex) , graphVertices.get(endVertexIndex) ));
+            return true;
+        }
+        return false;
+    }
+    private int findEdge(String startVertex, String endVertex) {
+        for(int i=0 ; i<graphEdges.size() ; i++){
+            Edge edge = graphEdges.get(i);
+            if(edge.getStart().getVertexName().equals(startVertex)&& edge.getTermination().getVertexName().equals(endVertex)){
+                return i;
+            }
+        }
+        return -1;
+    }
+    private int findVertexNew (String vertexName){
+        for(Vertex vertex : graphVertices){
+            if(vertex.getVertexName().equals(vertexName)){
+                return vertex.getIndex();
+            }
+        }
+        return -1;
+    }
+    private int [][] createDiWightMatrix(){
+        int [][] diRepresentationMatrix = new int[graphVertices.size()][graphVertices.size()];
+        for(int i=0 ; i<graphVertices.size() ; i++){
+            Vertex vertex = graphVertices.get(i);
+            for(Edge edge : graphEdges){
+                if(edge.getStart().equals(vertex)){
+                    int endVertexIndex = edge.getTermination().getIndex();
+                    diRepresentationMatrix[i][endVertexIndex]=edge.getWeight();
+                }
+            }
+        }
+        return diRepresentationMatrix;
+    }
+    private int [][] createWightMatrix(){
+        int [][] representationMatrix = new int[graphVertices.size()][graphVertices.size()];
+        for(int i=0 ; i<graphVertices.size() ; i++){
+            Vertex vertex = graphVertices.get(i);
+            for(Edge edge : graphEdges){
+                if(edge.getStart().equals(vertex)){
+                    int endVertexIndex = edge.getTermination().getIndex();
+                    representationMatrix[i][endVertexIndex]=edge.getWeight();
+                }else if(edge.getTermination().equals(vertex)){
+                    int startVertexIndex = edge.getStart().getIndex();
+                    representationMatrix[i][startVertexIndex]=edge.getWeight();
+                }
+            }
+        }
+        return representationMatrix;
+    }
 }

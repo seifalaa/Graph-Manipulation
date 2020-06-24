@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="905.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GraphRepresentationController">
+  <tabs>
+    <Tab text="Graph">
+         <content>
+            <Pane prefHeight="370.0" prefWidth="692.0">
+               <children>
+                  <ImageView fx:id="graphImage" fitHeight="369.0" fitWidth="496.0" pickOnBounds="true" preserveRatio="true" />
+                  <Separator layoutX="522.0" layoutY="49.0" orientation="VERTICAL" prefHeight="254.0" prefWidth="4.0" />
+                  <TableView fx:id="table" layoutX="575.0" layoutY="34.0" opacity="0.0" prefHeight="254.0" prefWidth="311.0">
+                    <columns>
+                      <TableColumn fx:id="edgesNamesTbl" prefWidth="85.60003662109375" text="Edge Name" />
+                      <TableColumn fx:id="edgesWeightTbl" prefWidth="90.4000244140625" text="Edge Weight" />
+                        <TableColumn fx:id="edgesStartVertex" prefWidth="67.99993896484375" text="Start" />
+                        <TableColumn fx:id="edgesEndVertex" prefWidth="75.20001220703125" text="End" />
+                    </columns>
+                  </TableView>
+                  <Label fx:id="genrationGraphLabel" layoutX="157.0" layoutY="168.0" text="Generating graph, Please wait." />
+               </children>
+            </Pane>
+         </content></Tab>
+    <Tab text="Adjacency List">
+         <content>
+            <TableView fx:id="adjListTbl" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="vertexCol" prefWidth="438.3999938964844" text="Vertex" />
+                <TableColumn fx:id="adjCol" prefWidth="468.0000305175781" text="Adjacent Vertexes" />
+              </columns>
+            </TableView>
+         </content></Tab>
+      <Tab text="Adjacency Matrix">
+         <content>
+            <GridPane fx:id="adjGrid">
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Incidence Matrix">
+         <content>
+            <GridPane fx:id="incGrid">
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab text="Representation Matrix">
+         <content>
+            <GridPane fx:id="repMatrixGrid">
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

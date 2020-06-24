@@ -1,6 +1,10 @@
-2
-1
+5
+5
 Directed
-a,b,
-Blue,Yellow,
-e1,a,b
+1,2,3,4,5,
+Blue,Yellow,Red,Yellow,Red,
+e1,1,2
+e2,2,3
+e3,3,4
+e4,4,5
+e5,1,5

@@ -19,8 +19,6 @@ public class EnterGraphController {
     public RadioButton directed = new RadioButton();
     public RadioButton undirected = new RadioButton();
     public TextField edgeName;
-    public TextField edgeFrom;
-    public TextField edgeTo;
     public Label edgeAdded;
     public TextField numberOfVertexesTxtField;
     public TextField numberOfEdgesTxtField;
@@ -35,6 +33,9 @@ public class EnterGraphController {
     public Button chooseOperationBtn;
     public Label graphEntered;
     public Button EnterGraphBtn;
+    public ComboBox endCombo;
+    public ComboBox startCombo;
+    public Button generateVertices;
     private int numberOfVertexes;
     private int numberOfEdges;
     private ArrayList<EdgeForTabel> edges = new ArrayList<>();
@@ -42,17 +43,9 @@ public class EnterGraphController {
     private int edgeCounter = 0;
     private int vertexCounter = 0;
     private ArrayList<String> vertexes = new ArrayList<>();
-
-    private void getData() {
-
-
-    }
-
     public void addEdge(ActionEvent actionEvent) {
-        edges.add(new EdgeForTabel(edgeName.getText(), edgeWeight.getText(), edgeFrom.getText(), edgeTo.getText()));
+        edges.add(new EdgeForTabel(edgeName.getText(), edgeWeight.getText(), (String)startCombo.getSelectionModel().getSelectedItem(),(String)endCombo.getSelectionModel().getSelectedItem()));
         edgeName.setText("");
-        edgeFrom.setText("");
-        edgeTo.setText("");
         edgeWeight.setText("");
         edgeAdded.setOpacity(1);
         FadeTransition fadeout = new FadeTransition(Duration.millis(1500));
@@ -66,6 +59,7 @@ public class EnterGraphController {
 
         if (edgeCounter == numberOfEdges) {
             addEdgeBtn.setDisable(true);
+            EnterGraphBtn.setDisable(false);
         }
 
     }
@@ -94,6 +88,7 @@ public class EnterGraphController {
             fadeout.setAutoReverse(false);
             fadeout.playFromStart();
             EnterGraphBtn.setDisable(true);
+            chooseOperationBtn.setDisable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -132,6 +127,14 @@ public class EnterGraphController {
 
         if (vertexCounter == numberOfVertexes) {
             addVertexBtn.setDisable(true);
+            generateVertices.setDisable(true);
+            addEdgeBtn.setDisable(false);
+            if(!startCombo.getItems().isEmpty()){
+                startCombo.getItems().clear();
+                endCombo.getItems().clear();
+            }
+            startCombo.getItems().addAll(vertexes);
+            endCombo.getItems().addAll(vertexes);
         }
     }
 
@@ -158,18 +161,65 @@ public class EnterGraphController {
         fadeout.setAutoReverse(false);
         fadeout.playFromStart();
         enterDataBtn.setDisable(true);
-        chooseOperationBtn.setDisable(false);
-        addEdgeBtn.setDisable(false);
         addVertexBtn.setDisable(false);
+        generateVertices.setDisable(false);
     }
 
     public void chooseOperation(ActionEvent actionEvent) throws IOException {
         Parent nextScene = FXMLLoader.load(getClass().getResource("chooseOperation.fxml"));
         Scene scene = new Scene(nextScene);
         Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        window.setOnCloseRequest(new ExitListener());
         window.setTitle("Choose Operation");
         window.setScene(scene);
         window.show();
 
+    }
+    public void generate(ActionEvent actionEvent) {
+        int counter = 1;
+        while(vertexCounter != numberOfVertexes){
+            vertexes.add(String.valueOf(counter));
+            counter++;
+            vertexCounter++;
+        }
+        addVertexBtn.setDisable(true);
+        if(!startCombo.getItems().isEmpty()){
+            startCombo.getItems().clear();
+            endCombo.getItems().clear();
+        }
+        startCombo.getItems().addAll(vertexes);
+        endCombo.getItems().addAll(vertexes);
+        generateVertices.setDisable(true);
+        addEdgeBtn.setDisable(false);
+    }
+    public void undoChange(ActionEvent actionEvent) {
+        if(!edges.isEmpty()){
+            EdgeForTabel edge = edges.remove(edges.size()-1);
+            edgeWeight.setText(edge.getWeight());
+            edgeName.setText(edge.getName());
+            startCombo.getSelectionModel().select(edge.getFrom());
+            endCombo.getSelectionModel().select(edge.getTo());
+            if(numberOfEdges == edgeCounter){
+
+                addEdgeBtn.setDisable(false);
+            }
+            edgeCounter--;
+        }else if(!vertexes.isEmpty()){
+            String vertex = vertexes.remove(vertexes.size()-1);
+            vertexName.setText(vertex);
+            if(numberOfVertexes == vertexCounter){
+                addVertexBtn.setDisable(false);
+                generateVertices.setDisable(false);
+            }
+            vertexCounter--;
+
+        }else if(numberOfEdges != 0){
+            enterDataBtn.setDisable(false);
+            addVertexBtn.setDisable(true);
+            generateVertices.setDisable(true);
+            addEdgeBtn.setDisable(true);
+            EnterGraphBtn.setDisable(true);
+            chooseOperationBtn.setDisable(true);
+        }
     }
 }

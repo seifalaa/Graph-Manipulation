@@ -17,6 +17,7 @@ public class WelcomePageController {
         Parent nextScene = FXMLLoader.load(getClass().getResource("enterGraph.fxml"));
         Scene scene = new Scene(nextScene);
         Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        window.setOnCloseRequest(new ExitListener());
         window.setTitle("Enter Graph");
         window.setScene(scene);
 

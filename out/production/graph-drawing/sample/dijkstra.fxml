@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="524.0" prefWidth="1115.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DijkstraController">
+   <children>
+      <ImageView fx:id="inputImage" fitHeight="369.0" fitWidth="496.0" layoutX="39.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="generatingLbl" layoutX="431.0" layoutY="239.0" text="Generating Graph Please Wait..." />
+      <ImageView fx:id="outputImage" fitHeight="369.0" fitWidth="496.0" layoutX="582.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="inputGraphLbl" layoutX="247.0" layoutY="31.0" opacity="0.0" text="Input Graph" />
+      <Label fx:id="outputGraphLbl" layoutX="784.0" layoutY="31.0" opacity="0.0" text="Output Graph" />
+      <Button fx:id="nextBtn" layoutX="1026.0" layoutY="452.0" mnemonicParsing="false" onAction="#showNext" text="Next" visible="false" />
+      <Button fx:id="previousBtn" layoutX="582.0" layoutY="452.0" mnemonicParsing="false" onAction="#showPrevious" text="Previous" visible="false" />
+   </children>
+</AnchorPane>

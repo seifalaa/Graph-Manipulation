@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="698.0" prefWidth="1093.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MinimumSpanningTree">
+   <children>
+      <ImageView fx:id="inputImage" fitHeight="369.0" fitWidth="496.0" layoutX="14.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="outputImage" fitHeight="369.0" fitWidth="496.0" layoutX="563.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
+      <TableView fx:id="inputTbl" layoutX="14.0" layoutY="424.0" opacity="0.0" prefHeight="200.0" prefWidth="496.0">
+        <columns>
+          <TableColumn fx:id="inputEdgeNameCol" prefWidth="92.7999849319458" text="Edge Name" />
+          <TableColumn fx:id="inputEdgeWeightCol" prefWidth="116.0" text="Edge Weight" />
+            <TableColumn fx:id="inputStartVertexCol" prefWidth="131.1999969482422" text="Edge Start Vertex" />
+            <TableColumn fx:id="inputEndVertexCol" prefWidth="158.4000244140625" text="Edge EndVertex" />
+        </columns>
+      </TableView>
+      <TableView fx:id="outputTbl" layoutX="563.0" layoutY="424.0" opacity="0.0" prefHeight="200.0" prefWidth="496.0">
+         <columns>
+            <TableColumn fx:id="outputEdgeNameCol" prefWidth="97.60003662109375" text="Edge Name" />
+            <TableColumn fx:id="outputEdgeWeightCol" prefWidth="117.5999755859375" text="Edge Weight" />
+            <TableColumn fx:id="outputStartVertexCol" prefWidth="123.199951171875" text="Edge Start Vertex" />
+            <TableColumn fx:id="outputEndVertexCol" prefWidth="159.2000732421875" text="Edge EndVertex" />
+         </columns>
+      </TableView>
+      <Label fx:id="inputGraphLabel" layoutX="201.0" layoutY="14.0" opacity="0.0" text="Input Graph" />
+      <Label fx:id="outputGraphLabel" layoutX="762.0" layoutY="14.0" opacity="0.0" text="Output Graph" />
+      <Label fx:id="genrationGraphLabel" layoutX="469.0" layoutY="304.0" text="Genrating graph, Please wait." />
+   </children>
+</AnchorPane>

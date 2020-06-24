@@ -125,7 +125,8 @@ public class GraphRepresentationController implements  Runnable {
 
     public void showAdjMatrix() {
         if (graphType.equals("Directed")) {
-            int[][] adjMatrix = graph.createAdjacencyMatrix();
+            int[][] adjMatrix = graph.createDiAdjacencyMatrix();
+
             ArrayList<String> vertexes = new ArrayList<>();
             ArrayList<Vertex> temp = graph.getGraphVertices();
             for (int i = 0; i < numberOfVertexes; i++) {
@@ -176,7 +177,7 @@ public class GraphRepresentationController implements  Runnable {
             }
 
         } else if (graphType.equals("Undirected")) {
-            int[][] adjMatrix = graph.createDiAdjacencyMatrix();
+            int[][] adjMatrix = graph.createAdjacencyMatrix();
             ArrayList<String> vertexes = new ArrayList<>();
             ArrayList<Vertex> temp = graph.getGraphVertices();
             for (int i = 0; i < numberOfVertexes; i++) {
@@ -299,6 +300,7 @@ public class GraphRepresentationController implements  Runnable {
             lbl2.setPrefHeight(height);
             lbl2.setFont(Font.font("", FontWeight.BOLD, 15));
             incGrid.add(lbl2, 0, 0);
+            ///****
             for (int i = 0; i < numberOfVertexes; i++) {
                 Label lbl = new Label(vertexes.get(i));
                 lbl.setAlignment(Pos.CENTER);
@@ -308,7 +310,7 @@ public class GraphRepresentationController implements  Runnable {
                 GridPane.setColumnIndex(lbl, 0);
                 GridPane.setRowIndex(lbl, i + 1);
                 lbl.setFont(Font.font("", FontWeight.BOLD, 15));
-                adjGrid.getChildren().add(lbl);
+                incGrid.getChildren().add(lbl);
             }
             ArrayList<Edge> edges = graph.getGraphEdges();
             for (int i = 0; i < numberOfEdges; i++) {

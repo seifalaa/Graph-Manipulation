@@ -1,94 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EnterGraphController">
    <children>
-      <Pane layoutX="10.0" layoutY="10.0" prefHeight="362.0" prefWidth="706.0">
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="362.0" prefWidth="736.0">
          <children>
-            <Label layoutX="14.0" layoutY="14.0" text="Enter number of vetixes:">
+            <Label layoutX="15.0" layoutY="40.0" text="Enter number of vetices:">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="numberOfVertexesTxtField" layoutX="14.0" layoutY="40.0" prefHeight="25.0" prefWidth="176.0" />
-            <Label layoutX="14.0" layoutY="92.0" text="Enter number of edges: ">
+            <TextField fx:id="numberOfVertexesTxtField" layoutX="15.0" layoutY="66.0" prefHeight="25.0" prefWidth="176.0" />
+            <Label layoutX="15.0" layoutY="118.0" text="Enter number of edges: ">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="numberOfEdgesTxtField" layoutX="14.0" layoutY="118.0" prefHeight="25.0" prefWidth="176.0" />
-            <Label layoutX="14.0" layoutY="164.0" text="Choose graph type: ">
+            <TextField fx:id="numberOfEdgesTxtField" layoutX="15.0" layoutY="144.0" prefHeight="25.0" prefWidth="176.0" />
+            <Label layoutX="15.0" layoutY="190.0" text="Choose graph type: ">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <RadioButton fx:id="directed" layoutX="14.0" layoutY="192.0" mnemonicParsing="false" text="Directed">
+            <RadioButton fx:id="directed" layoutX="15.0" layoutY="218.0" mnemonicParsing="false" selected="true" text="Directed">
                <toggleGroup>
                   <ToggleGroup fx:id="toggleGroup" />
                </toggleGroup></RadioButton>
-            <RadioButton fx:id="undirected" layoutX="14.0" layoutY="218.0" mnemonicParsing="false" text="Undirected" toggleGroup="$toggleGroup" />
-            <Button fx:id="enterDataBtn" layoutX="118.0" layoutY="252.0" mnemonicParsing="false" onAction="#EnterData" text="Enter Data" />
-            <Label layoutX="246.0" layoutY="16.0" text="Enter vertex name: ">
+            <RadioButton fx:id="undirected" layoutX="15.0" layoutY="244.0" mnemonicParsing="false" text="Undirected" toggleGroup="$toggleGroup" />
+            <Button fx:id="enterDataBtn" layoutX="119.0" layoutY="278.0" mnemonicParsing="false" onAction="#EnterData" text="Enter Data" />
+            <Label layoutX="247.0" layoutY="42.0" text="Enter vertex name: ">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="vertexName" layoutX="246.0" layoutY="42.0" prefHeight="25.0" prefWidth="194.0" />
-            <Button fx:id="addVertexBtn" disable="true" layoutX="367.0" layoutY="89.0" mnemonicParsing="false" onAction="#addVertex" text="Add vertex" />
-            <Label fx:id="vertexAdded" layoutX="294.0" layoutY="135.0" opacity="0.0" text="Vertex added successfully" textFill="#3cff00">
+            <TextField fx:id="vertexName" layoutX="247.0" layoutY="68.0" prefHeight="25.0" prefWidth="194.0" />
+            <Button fx:id="addVertexBtn" disable="true" layoutX="344.0" layoutY="115.0" mnemonicParsing="false" onAction="#addVertex" text="Add vertex" />
+            <Button fx:id="generateVertices" disable="true" layoutX="311.0" layoutY="157.0" mnemonicParsing="false" onAction="#generate" text="Generate Vertices" />
+            <Label fx:id="vertexAdded" layoutX="238.0" layoutY="198.0" opacity="0.0" text="Vertex added successfully" textFill="#3cff00">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="475.0" layoutY="16.0" text="Enter edge name: ">
+            <Label layoutX="476.0" layoutY="42.0" text="Enter edge name: ">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="edgeName" layoutX="475.0" layoutY="42.0" prefHeight="25.0" prefWidth="214.0" />
-            <Label layoutX="475.0" layoutY="92.0" text="Enter edge weight: ">
+            <TextField fx:id="edgeName" layoutX="476.0" layoutY="68.0" prefHeight="25.0" prefWidth="214.0" />
+            <Label layoutX="476.0" layoutY="118.0" text="Enter edge weight: ">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="edgeWeight" layoutX="475.0" layoutY="121.0" prefHeight="25.0" prefWidth="214.0" />
-            <Label layoutX="475.0" layoutY="174.0" text="From:">
+            <TextField fx:id="edgeWeight" layoutX="476.0" layoutY="147.0" prefHeight="25.0" prefWidth="214.0" />
+            <ComboBox fx:id="startCombo" layoutX="476.0" layoutY="214.0" prefHeight="25.0" prefWidth="80.0" />
+            <ComboBox fx:id="endCombo" layoutX="604.0" layoutY="214.0" prefHeight="25.0" prefWidth="80.0" />
+            <Label layoutX="492.0" layoutY="187.0" text="From:">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="edgeFrom" layoutX="530.0" layoutY="171.0" prefHeight="25.0" prefWidth="52.0" />
-            <Label layoutX="603.0" layoutY="174.0" text="To:">
+            <Label layoutX="634.0" layoutY="187.0" text="To:">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="edgeTo" layoutX="638.0" layoutY="171.0" prefHeight="25.0" prefWidth="52.0" />
-            <Button fx:id="addEdgeBtn" disable="true" layoutX="622.0" layoutY="221.0" mnemonicParsing="false" onAction="#addEdge" text="Add edge" />
-            <Label fx:id="edgeAdded" layoutX="554.0" layoutY="256.0" opacity="0.0" text="Edge added successfully" textFill="#3cff00">
+            <Button fx:id="addEdgeBtn" disable="true" layoutX="623.0" layoutY="269.0" mnemonicParsing="false" onAction="#addEdge" text="Add edge" />
+            <Label fx:id="edgeAdded" layoutX="471.0" layoutY="282.0" opacity="0.0" text="Edge added successfully" textFill="#3cff00">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="EnterGraphBtn" layoutX="499.0" layoutY="323.0" mnemonicParsing="false" onAction="#drawGraph" text="Enter Graph" />
-            <Separator layoutX="223.0" layoutY="41.0" orientation="VERTICAL" prefHeight="251.0" prefWidth="6.0" />
-            <Separator layoutX="457.0" layoutY="33.0" orientation="VERTICAL" prefHeight="251.0" prefWidth="6.0" />
-            <Label fx:id="dataEnteredLbl" layoutX="54.0" layoutY="306.0" opacity="0.0" text="Data entered successfully" textFill="#37ff00">
+            <Button fx:id="EnterGraphBtn" disable="true" layoutX="470.0" layoutY="323.0" mnemonicParsing="false" onAction="#drawGraph" text="Enter Graph" />
+            <Separator layoutX="224.0" layoutY="67.0" orientation="VERTICAL" prefHeight="251.0" prefWidth="6.0" />
+            <Separator layoutX="458.0" layoutY="59.0" orientation="VERTICAL" prefHeight="251.0" prefWidth="6.0" />
+            <Label fx:id="dataEnteredLbl" layoutX="32.0" layoutY="306.0" opacity="0.0" text="Data entered successfully" textFill="#37ff00">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
             <Button fx:id="chooseOperationBtn" disable="true" layoutX="588.0" layoutY="323.0" mnemonicParsing="false" onAction="#chooseOperation" text="Choose Operation" />
-            <Label fx:id="graphEntered" layoutX="340.0" layoutY="327.0" opacity="0.0" text="Grahp Entered Successfully" textFill="#3cff00">
+            <Label fx:id="graphEntered" layoutX="291.0" layoutY="327.0" opacity="0.0" text="Grahp Entered Successfully" textFill="#3cff00">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
+            <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="736.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#undoChange" text="Undo" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
          </children>
       </Pane>
    </children>

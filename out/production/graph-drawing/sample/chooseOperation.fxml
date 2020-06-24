@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ChooseOperationController">
+
+<AnchorPane prefHeight="400.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ChooseOperationController">
    <children>
-      <RadioButton fx:id="gR" layoutX="42.0" layoutY="104.0" mnemonicParsing="false" text="Graph Representation">
+      <RadioButton fx:id="gR" layoutX="33.0" layoutY="48.0" mnemonicParsing="false" text="Graph Representation">
          <toggleGroup>
             <ToggleGroup fx:id="g1" />
          </toggleGroup>
@@ -13,35 +14,45 @@
             <Font size="17.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="gC" layoutX="42.0" layoutY="145.0" mnemonicParsing="false" text="Graph Coloring" toggleGroup="$g1">
+      <RadioButton fx:id="gC" layoutX="33.0" layoutY="89.0" mnemonicParsing="false" text="Graph Coloring" toggleGroup="$g1">
          <font>
             <Font size="17.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="flury" layoutX="42.0" layoutY="188.0" mnemonicParsing="false" text="Fluery's Algorithm" toggleGroup="$g1">
+      <RadioButton fx:id="flury" layoutX="33.0" layoutY="132.0" mnemonicParsing="false" text="Fluery's Algorithm" toggleGroup="$g1">
          <font>
             <Font size="17.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="MST" layoutX="42.0" layoutY="230.0" mnemonicParsing="false" text="Minimum Spanning Tree" toggleGroup="$g1">
+      <RadioButton fx:id="MST" layoutX="33.0" layoutY="174.0" mnemonicParsing="false" text="Minimum Spanning Tree" toggleGroup="$g1">
          <font>
             <Font size="17.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="MHC" layoutX="42.0" layoutY="274.0" mnemonicParsing="false" text="Minimum Hamilton Circuit" toggleGroup="$g1">
+      <RadioButton fx:id="MHC" layoutX="33.0" layoutY="218.0" mnemonicParsing="false" text="Minimum Hamilton Circuit" toggleGroup="$g1">
          <font>
             <Font size="17.0" />
          </font>
       </RadioButton>
-      <Label layoutX="36.0" layoutY="35.0" text="Choose Operation:">
+      <Label layoutX="33.0" layoutY="14.0" text="Choose Operation:">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Button layoutX="438.0" layoutY="361.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="56.0" text="Back" />
-      <Button fx:id="chooseButton" layoutX="510.0" layoutY="361.0" mnemonicParsing="false" onAction="#choose" prefHeight="26.0" prefWidth="68.0" text="Choose" />
-      <RadioButton fx:id="MHPC" layoutX="42.0" layoutY="316.0" mnemonicParsing="false" text="Hamilton Path &amp; Hamilton Circuit" toggleGroup="$g1">
+      <Button layoutX="437.0" layoutY="361.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="56.0" text="Back" />
+      <Button fx:id="chooseButton" layoutX="510.0" layoutY="361.0" mnemonicParsing="false" onAction="#choose" prefHeight="26.0" prefWidth="87.0" text="Choose" />
+      <RadioButton fx:id="MHPC" layoutX="33.0" layoutY="260.0" mnemonicParsing="false" text="Hamilton Path &amp; Hamilton Circuit" toggleGroup="$g1">
 
+         <font>
+            <Font size="17.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="MaximumFlow" layoutX="33.0" layoutY="299.0" mnemonicParsing="false" text="Maximum Flow" toggleGroup="$g1">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="Dijkstra" layoutX="33.0" layoutY="334.0" mnemonicParsing="false" text="Dijkstra" toggleGroup="$g1">
          <font>
             <Font size="17.0" />
          </font>

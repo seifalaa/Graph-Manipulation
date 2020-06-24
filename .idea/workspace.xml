@@ -5,12 +5,153 @@
       <artifact name="graph-drawing:jar" />
     </artifacts-to-build>
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="adjusting incidence matrix">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/graph_drawing_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dijkstraGraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drawGraph.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph-drawing.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main2.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/AdjListTableContent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/ChooseOperationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/DijkstraController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/DijkstraStartController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/DijkstraTableData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/DisjointSets.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/Edge.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/EdgeForTabel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/EnterGraphController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/ExitListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/FlueryAlgorithm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/Graph$SortEdge.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/Graph.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/GraphColoring.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/GraphRepresentationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/HamiltonCircuit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/MaxFlowController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/MaximumFLowStartController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/MinimumHamiltonCircuit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/MinimumSpanningTree.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/Vertex.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/WelcomePageController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/chooseOperation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/dijkstra.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/dijkstraStart.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/enterGraph.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/fluery'sAlgorithm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/graphColoring.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/graphRepresentation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/hamiltonCircuit.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/maxFlow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/maximumFLowStart.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/minimumHamiltonCircuit.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/minimumSpanningTree.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/wallpaper.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/welcomePage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/DijkstraController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/DijkstraStartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/DijkstraTableData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/ExitListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/MaxFlowController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/MaximumFLowStartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/dijkstra.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/dijkstraStart.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/maxFlow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/maximumFLowStart.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wallpaper.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MST.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MST.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PKG-00.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/PKG-00.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/Tree-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/Tree-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/Tree-01.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/Tree-01.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/main.exe.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/main.exe.manifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/warn-main.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/warn-main.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/xref-main.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/xref-main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/minimumSpanningTree/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/minimumSpanningTree/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/minimumSpanningTree/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/minimumSpanningTree/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/minimumSpanningTree/PKG-00.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/minimumSpanningTree/PKG-00.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/minimumSpanningTree/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/minimumSpanningTree/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/minimumSpanningTree/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/minimumSpanningTree/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/minimumSpanningTree/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/minimumSpanningTree/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/minimumSpanningTree/Tree-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/minimumSpanningTree/Tree-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/minimumSpanningTree/Tree-01.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/minimumSpanningTree/Tree-01.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/minimumSpanningTree/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/minimumSpanningTree/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/minimumSpanningTree/minimumSpanningTree.exe.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/build/minimumSpanningTree/minimumSpanningTree.exe.manifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/minimumSpanningTree/warn-minimumSpanningTree.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/minimumSpanningTree/warn-minimumSpanningTree.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/minimumSpanningTree/xref-minimumSpanningTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/minimumSpanningTree/xref-minimumSpanningTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coloredGraph.txt" beforeDir="false" afterPath="$PROJECT_DIR$/coloredGraph.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/minimumSpanningTree.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/minimumSpanningTree.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graph-drawing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/graph-drawing.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph.txt" beforeDir="false" afterPath="$PROJECT_DIR$/graph.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.spec" beforeDir="false" afterPath="$PROJECT_DIR$/main.spec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minimumSpanningTree.exe" beforeDir="false" afterPath="$PROJECT_DIR$/minimumSpanningTree.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minimumSpanningTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/minimumSpanningTree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minimumSpanningTree.spec" beforeDir="false" afterPath="$PROJECT_DIR$/minimumSpanningTree.spec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/graph_drawing_jar/graph-drawing.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/graph_drawing_jar/graph-drawing.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/AdjListTableContent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/AdjListTableContent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/ChooseOperationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/ChooseOperationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/DisjointSets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/DisjointSets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/Edge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/EdgeForTabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/EdgeForTabel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/EnterGraphController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/EnterGraphController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/FlueryAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/FlueryAlgorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/Graph$SortEdge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/Graph$SortEdge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphColoring.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphColoring.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphRepresentationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/GraphRepresentationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/HamiltonCircuit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/HamiltonCircuit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumHamiltonCircuit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumHamiltonCircuit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumSpanningTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/MinimumSpanningTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/Vertex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/WelcomePageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/WelcomePageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/chooseOperation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/chooseOperation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/enterGraph.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/enterGraph.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/wallpaper.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/wallpaper.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph-drawing/sample/welcomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph-drawing/sample/welcomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/ChooseOperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ChooseOperationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/EnterGraphController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/EnterGraphController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/GraphRepresentationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GraphRepresentationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/WelcomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/WelcomePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/chooseOperation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/chooseOperation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/enterGraph.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/enterGraph.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/wallpaper.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/wallpaper.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/welcomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/welcomePage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +199,6 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="JavaFxApplication" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -88,7 +226,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -104,8 +241,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/OS/disk-scheduling" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -113,6 +250,9 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mohamed\Desktop\graph\source code\Least Version\Graph-Manipulation\src\sample" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="sample" />
     </key>
@@ -217,11 +357,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.graph-drawer" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -256,7 +391,19 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="UnknownFeatures">
+    <option featureType="com.intellij.configurationType" implementationName="PythonConfigurationType" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
@@ -266,18 +413,25 @@
     <option name="LAST_COMMIT_MESSAGE" value="adjusting incidence matrix" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="91" key="#Project_Structure" timestamp="1584538956243">
+    <state x="361" y="14" key="#Project_Structure" timestamp="1593007651766">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="91" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1584538956243" />
-    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1585324018172">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="361" y="14" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1593007651766" />
+    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1592689988386">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1592689988386" />
     <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1585324018172" />
-    <state x="499" y="216" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585326321796">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="444" y="182" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585329140854">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="444" y="182" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1585329140854" />
     <state x="499" y="216" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.864@0.0.1536.864" timestamp="1585326321796" />
+    <state x="552" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1592681854425">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="491" y="229" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1585329119744" />
+    <state x="552" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1592681854425" />
     <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585130276276">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -290,45 +444,59 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="409" y="27" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1585161106397" />
-    <state x="473" y="174" key="FileChooserDialogImpl" timestamp="1585323772704">
+    <state x="473" y="174" key="FileChooserDialogImpl" timestamp="1593007650312">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="473" y="174" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585323772704" />
-    <state width="741" height="223" key="GridCell.Tab.0.bottom" timestamp="1585327301525">
+    <state x="473" y="174" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1593007650312" />
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1593010824518">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="741" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585327301525" />
-    <state width="741" height="223" key="GridCell.Tab.0.center" timestamp="1585327301525">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585337872896" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592998773640" />
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1593010824518" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1593010824518">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="741" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1585327301525" />
-    <state width="741" height="223" key="GridCell.Tab.0.left" timestamp="1585327301525">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585337872896" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592998773640" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1593010824518" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1593010824518">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="741" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1585327301525" />
-    <state width="741" height="223" key="GridCell.Tab.0.right" timestamp="1585327301525">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585337872895" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592998773640" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1593010824518" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1593010824518">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="741" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1585327301525" />
-    <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1585245671637">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585337872896" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592998773640" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1593010824518" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1592696856423">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592696856423" />
     <state width="1493" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585245671637" />
-    <state width="1493" height="277" key="GridCell.Tab.1.center" timestamp="1585245671637">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1592696856423">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592696856423" />
     <state width="1493" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1585245671637" />
-    <state width="1493" height="277" key="GridCell.Tab.1.left" timestamp="1585245671637">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1592696856423">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592696856423" />
     <state width="1493" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1585245671637" />
-    <state width="1493" height="277" key="GridCell.Tab.1.right" timestamp="1585245671637">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1592696856423">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592696856423" />
     <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1585245671637" />
-    <state x="249" y="7" key="SettingsEditor" timestamp="1585326338645">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="62" y="0" key="SettingsEditor" timestamp="1592692712860">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="55" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585329143364" />
+    <state x="62" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592692712860" />
     <state x="249" y="7" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1585326338645" />
     <state x="463" y="30" width="609" height="804" key="find.popup" timestamp="1585064347834">
       <screen x="0" y="0" width="1536" height="864" />
@@ -342,21 +510,5 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1585054741273" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <default-breakpoints>
-        <breakpoint type="python-exception">
-          <properties notifyOnTerminate="true" exception="BaseException">
-            <option name="notifyOnTerminate" value="true" />
-          </properties>
-        </breakpoint>
-      </default-breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/graph_drawing$Main.ic" NAME="Main Coverage Results" MODIFIED="1584539075040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>sample.*</FILTER>
-    </SUITE>
   </component>
 </project>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="444.0" prefWidth="563.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MaxFlowController">
+   <children>
+      <ImageView fx:id="graphImage" fitHeight="369.0" fitWidth="496.0" layoutX="34.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="generatingGraphLbl" layoutX="199.0" layoutY="191.0" text="Generating Graph Please Wait..." />
+      <Label fx:id="outputLbl" layoutX="34.0" layoutY="402.0" opacity="0.0" text="Maximum Flow: ">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

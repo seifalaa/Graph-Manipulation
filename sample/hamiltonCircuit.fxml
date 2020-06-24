@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="604.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HamiltonCircuit">
+   <children>
+      <ImageView fx:id="graphImage" fitHeight="369.0" fitWidth="496.0" layoutX="52.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="hamiltonCircuitLbl" layoutX="52.0" layoutY="448.0" opacity="0.0" text="Label">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="hamiltonPathLbl" layoutX="52.0" layoutY="485.0" opacity="0.0" text="Label">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="generationGraphLabel" layoutX="220.0" layoutY="293.0" text="Generating graph, Please wait." />
+   </children>
+</AnchorPane>
